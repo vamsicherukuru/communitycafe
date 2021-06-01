@@ -1,0 +1,72 @@
+<!<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+	<title>Profile - {{user.username}}</title>
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+
+
+
+	<style type="text/css">
+		
+		@import url('https://fonts.googleapis.com/css2?family=Advent+Pro&display=swap');
+body{
+			font-family: Advent Pro;
+			letter-spacing: 2px;
+
+			
+		}
+
+
+	</style>
+</head>
+<body>
+	<div style="height: px; width: 100%; position: fixed; top: 0px;background: white; padding: 10px; box-shadow: 0px 0px 5px grey;">
+		<h3 style="position: fixed;">
+			
+
+
+
+			<a href="{% url 'cc:groups' %}" style="text-decoration: none;">&#x2190; BACK TO HOME</a>
+		</h3>
+		
+	</div>
+
+
+
+	
+<div class="reg_form" style="border:1px solid #D8ECFD; width:600px;padding-top: 50px; ">
+		      <form method="POST" >
+	     {% csrf_token %}
+<h5>Hey {{user.username}}, <br>Please Join a Group To Enjoy the services..</h5>
+	  {{group_request_form.as_p}}
+  <button class="btn btn-outline-primary" style="width: 200px;letter-spacing:3px; border-radius: 0px;color: white; background-color: #1D3558;" type="submit">Request to Join</button>
+  </form>
+  </div>
+
+
+
+
+
+
+
+</div>
+
+
+<!-- <div style="">
+	<img style="width: 700px;position: absolute;z-index: -5000; top: 100px; " src="{% static '\loggedinassets\assets\img\7.jpg' %}">
+</div>
+ -->
+
+
+
+
+
+	
+</body>
+</html>
+
+
+

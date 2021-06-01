@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Add Items</title>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+	<style type="text/css">
+		input[name='item_name']{
+			width: 500px;
+			padding: 5px;
+			font-family: arial;
+			font-size: 1.5em;
+		}
+
+	</style>
+</head>
+<body>
+
+<!-- http://127.0.0.1:8000/add/item/8/
+ -->
+<!--  
+ -->
+<center>
+ <div style="border: 1px solid black; padding: 100px;">
+ 	
+ 		<form method="POST" enctype="multipart/form-data">
+ 	{% csrf_token%}
+
+
+ 	{{add_item_form.as_p}}
+
+
+<button type="submit" class="btn btn-outline-warning">Submit</button>
+		
+
+
+	</form>
+
+
+
+
+ </div>
+  </center>
+
+</body>
+</html>

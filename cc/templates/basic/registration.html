@@ -1,0 +1,353 @@
+<!-- 
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>New User - Registration</title>
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+
+
+	<style >
+		@import url('https://fonts.googleapis.com/css2?family=Advent+Pro&display=swap');
+		input{
+			width: 300px;
+			padding: 3px;
+			border-radius: 1px;
+			font-size: 20px;
+			border:none;
+			border-bottom: 1px solid grey;
+			font-family: Advent Pro;
+			color:black ;
+		}
+		input[name='profile_pic']{
+						border:none;
+
+		}
+		
+		input:focus{
+			background-color: #D8ECFD ;
+			border:none;
+			border-radius: 10px;
+		}
+		body{
+			font-family: Advent Pro;
+		}
+
+	</style>
+</head>
+<body>
+
+<div style="box-shadow: 0px 0px 10px grey; position: fixed; z-index: 1000000; background: white; top: 0px;	width: 100%; left: 0px; padding: 10px">
+	<center>
+
+		<h1 style="color: #FF5757">
+
+
+		Community Cafe Registration</h1></center>
+</div>
+
+ 
+
+
+
+ <div style="position: relative; float: right; top: 100px; width: 45%;box-shadow: 0px 0px 5px silver; padding: 15px;">
+ 	
+
+<form method="POST" enctype="multipart/form-data" >
+	<h3 style="font-weight: bold;">Please Fill in the Details</h3>
+<hr>
+  {% csrf_token %}
+<br>
+<h5 style="">Account Details</h5>
+<hr style="margin-right: 350px;background-color: black;">
+  {{user_form.as_p}} 
+  <br>
+  <h5>Contact & Address Details</h5>
+<hr style="margin-right: 350px; background-color: black;">
+  {{profile_form.as_p}}
+  <br>
+  <button class="btn" style="background-color:#1D3558; color: white;float: right; width: 200px; margin-right: 50px;
+" type="submit">Register Safely</button>
+</form>
+
+ </div>
+ <div style="float: left; position: fixed; top: 109px; height: 100%; width: 52%; box-shadow: 0px 0px 5px silver; padding: 15px;">
+ 	
+<center>
+ <img src="{% static '\assets\img\slide\2.jpg' %}" alt="" class="img-fluid"
+style="width: 100px;position: fixed; top: 50%; left: 22.5%; transform: scale(5);" 
+	 	>
+	<h1 style="color: #1D3558"> 	Hey there !</h1>
+	<h1 style="position: fixed; top: 73%; left: 10%">Welcome to Community Cafe !</h1>
+</center>
+
+ </div>
+  
+</body>
+</html> -->
+
+
+
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Community Cafe - Login</title>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css'>
+  <link rel="stylesheet" href="{% static 'other/css/logIn.css' %}">
+<style type="text/css">
+	@import url('https://fonts.googleapis.com/css2?family=Advent+Pro&display=swap');
+
+
+	body {
+ font-family: 'Advent Pro';
+  line-height: 1.5;
+  color: #444444;
+}
+p, input, button{
+	 font-family: 'Advent Pro';
+
+
+}
+
+</style>
+</head>
+<body>
+<div class="close-icon" ><a href="javascript:history.back()"><img src="images/close.png"  width="40px" height="40px"></a></div>
+{% if b_errors %}
+<div style="background: white; width: 80%;">
+	<p style="color: black; padding: 10px; font-size: 1.2em; font-weight: bolder; font-family: arial;">{{b_errors}}</p>
+</div>
+{% endif %}
+{% if a_errors %}
+<div style="background: white; width: 80%;">
+	<p style="color: black; padding: 10px; font-size: 1.5em; ">{{a_errors}}</p>
+</div>
+
+{% endif %}
+<br><br>
+<div class="container" id="container">
+	<div class="form-container sign-up-container">
+		<form id="regForm" method="POST" enctype="multipart/form-data">
+			<input type="hidden" value="signup_form" name="message_form_field">
+			{% csrf_token %}
+			<h1>Register</h1>
+			
+			<!-- One "tab" for each step in the form: -->
+			<div class="tab">Personal Details
+			  <p>{{user_form.first_name}}</p>
+			  <p>{{user_form.last_name}}</p>				
+			  <p>{{user_form.email}}</p>	
+			  <p>{{user_form.username}}</p>
+			  <p>{{user_form.password}}</p>
+			</div>
+			
+			<div class="tab">Contact & Address Details
+				<p>{{profile_form.mobileNumber}}</p>	
+				<p>{{profile_form.houseNumber}}</p>
+				<p>{{profile_form.Area_Name}}</p>
+
+			  <p>{{profile_form.city}}</p>
+			  <p>{{profile_form.state}}</p>
+			</div>
+			
+			<div class="tab"> Profile Picture<Picture></Picture>
+			  <p>{{profile_form.profile_pic}}</p>
+			  <p><img id="profilepic" src="http://placehold.it/180" alt="your image" /></p>
+			</div>
+			
+			<div class="tab">Almost Done
+			 
+			  <input type="checkbox" name="checkbox"  oninput="this.className = ''" placeholder="I Agree to all">
+
+			  		  <label for="checkbox">I Agree to All Terms & Conditions</label>
+			</div>
+			
+			<div style="overflow:auto;">
+			  <div style="float:right;">
+				<button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button><br>
+				<button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+				<button type="submit" class="btn btn-primary">Submit</button>
+			  </div>
+
+			</div>
+			
+			<!-- Circles which indicates the steps of the form: -->
+			<div style="text-align:center;margin-top:40px;">
+			  <span class="step"></span>
+			  <span class="step"></span>
+			  <span class="step"></span>
+			  <span class="step"></span>
+			</div>
+			
+			</form>
+	</div>
+	<div class="form-container sign-in-container">
+		<form method="POST">
+
+			{% csrf_token %}
+
+			<input type="hidden" value="login_form" name="message_form_field">
+			<h1>Sign in</h1><br><br>
+			<input type="text" name="username" style = "margin: 8px 0px" placeholder="username" />
+			<input type="password" name="password" style = "margin: 8px 0px"  placeholder="Password" />
+			<a href="#">Forgot your password!</a><br><br>
+			<button onclick = "javascript:history.back()">Sign In</button>
+		</form>
+	</div>
+	<div class="overlay-container">
+		<div class="overlay">
+			<div class="overlay-panel overlay-left">
+				<h1>Welcome Back!</h1>
+				<p>To keep connected with us please login with your personal info</p>
+				<button class="ghost" id="signIn">Sign In</button>
+			</div>
+			<div class="overlay-panel overlay-right">
+				<h1>Hello, Friend!</h1>
+				<p>Enter your personal details and start journey with us</p>
+				<button class="ghost" id="signUp">Sign Up</button>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- partial -->
+  <script>
+  	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  	const signUpButton = document.getElementById('signUp');
+const signInButton = document.getElementById('signIn');
+const container = document.getElementById('container');
+
+signUpButton.addEventListener('click', () => {
+	container.classList.add("right-panel-active");
+});
+
+signInButton.addEventListener('click', () => {
+	container.classList.remove("right-panel-active");
+});
+
+var currentTab = 0; // Current tab is set to be the first tab (0)
+showTab(currentTab); // Display the current tab
+
+function showTab(n) {
+  // This function will display the specified tab of the form ...
+  var x = document.getElementsByClassName("tab");
+  x[n].style.display = "block";
+  // ... and fix the Previous/Next buttons:
+  if (n == 0) {
+    document.getElementById("prevBtn").style.display = "none";
+  } else {
+    document.getElementById("prevBtn").style.display = "inline";
+  }
+  if (n == (x.length - 1)) {
+    document.getElementById("nextBtn").style = "transform:scale(0.5)";
+  } else {
+    document.getElementById("nextBtn").innerHTML = "Next";
+  }
+  // ... and run a function that displays the correct step indicator:
+  fixStepIndicator(n)
+}
+
+function nextPrev(n) {
+  // This function will figure out which tab to display
+  var x = document.getElementsByClassName("tab");
+  // Exit the function if any field in the current tab is invalid:
+  if (n == 1 && !validateForm()) return false;
+  // Hide the current tab:
+  x[currentTab].style.display = "none";
+  // Increase or decrease the current tab by 1:
+  currentTab = currentTab + n;
+  // if you have reached the end of the form... :
+  if (currentTab >= x.length) {
+    //...the form gets submitted:
+    document.getElementById("regForm").submit();
+    return false;
+  }
+  // Otherwise, display the correct tab:
+  showTab(currentTab);
+}
+
+function validateForm() {
+  // This function deals with validation of the form fields
+  var x, y, i, valid = true;
+  x = document.getElementsByClassName("tab");
+  y = x[currentTab].getElementsByTagName("input");
+  // A loop that checks every input field in the current tab:
+  for (i = 0; i < y.length; i++) {
+    // If a field is empty...
+    if (y[i].value == "") {
+      // add an "invalid" class to the field:
+      y[i].className += " invalid";
+      // and set the current valid status to false:
+      valid = false;
+    }
+  }
+  // If the valid status is true, mark the step as finished and valid:
+  if (valid) {
+    document.getElementsByClassName("step")[currentTab].className += " finish";
+  }
+  return valid; // return the valid status
+}
+
+function fixStepIndicator(n) {
+  // This function removes the "active" class of all steps...
+  var i, x = document.getElementsByClassName("step");
+  for (i = 0; i < x.length; i++) {
+    x[i].className = x[i].className.replace(" active", "");
+  }
+  //... and adds the "active" class to the current step:
+  x[n].className += " active";
+}
+
+function readURL(input) {
+  if (input.files && input.files[0]) {
+      var reader = new FileReader();
+
+      reader.onload = function (e) {
+          $('#blah')
+              .attr('src', e.target.result);
+      };
+
+      reader.readAsDataURL(input.files[0]);
+  }
+}
+  </script>
+
+</body>
+</html>
+
+
+
+

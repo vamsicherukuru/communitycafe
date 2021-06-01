@@ -1,0 +1,340 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+	<title>OTP</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+
+
+
+	<center>
+
+		<div style="border:1px solid silver; width: 500px; padding: 50px; margin-top: 150px; box-shadow: 0px 0px 20px grey;">
+			<h5>Enter the OTP sent to your mobile <br> and Activate Your Account</h5>
+	<p>- Team Community Cafe</p>
+
+
+	<form method="POST">
+		{% csrf_token %}
+		<input type="text" name="mobile_otp" required minlength="4" maxlength="4">
+		<input type="submit"  name="">
+		<br>
+		<br>
+		{% if message %}
+
+		<p>{{message}}</p>
+
+		{% endif %}
+	</form>
+		</div>
+</center>
+</body>
+</html>
+
+
+
+
+ -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>New User - Registration</title>
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+
+
+	<style >
+		@import url('https://fonts.googleapis.com/css2?family=Advent+Pro&display=swap');
+		input{
+			width: 300px;
+			padding: 3px;
+			border-radius: 1px;
+			font-size: 20px;
+			border:none;
+			border-bottom: 1px solid grey;
+			font-family: Advent Pro;
+			color:black ;
+		}
+		input[name='profile_pic']{
+						border:none;
+
+		}
+		
+		input:focus{
+			background-color: #D8ECFD ;
+			border:none;
+			border-radius: 10px;
+		}
+		body{
+			font-family: Advent Pro;
+		}
+
+	</style>
+</head>
+<body>
+
+<div style="box-shadow: 0px 0px 10px grey; position: fixed; z-index: 1000000; background: white; top: 0px;	width: 100%; left: 0px; padding: 10px">
+	<center>
+
+		<h1 style="color: #FF5757">
+
+
+		Community Cafe Registration</h1></center>
+</div>
+
+ 
+
+
+
+ <div style="position: relative; float: right; top: 100px; width: 45%;box-shadow: 0px 0px 5px silver; padding: 15px;">
+ 	
+
+<form method="POST" enctype="multipart/form-data" >
+	<h3 style="font-weight: bold;">Please Fill in the Details</h3>
+<hr>
+  {% csrf_token %}
+<br>
+<h5 style="">Account Details</h5>
+<hr style="margin-right: 350px;background-color: black;">
+  {{user_form.as_p}} 
+  <br>
+  <h5>Contact & Address Details</h5>
+<hr style="margin-right: 350px; background-color: black;">
+  {{profile_form.as_p}}
+  <br>
+  <button class="btn" style="background-color:#1D3558; color: white;float: right; width: 200px; margin-right: 50px;
+" type="submit">Register Safely</button>
+</form>
+
+ </div>
+ <div style="float: left; position: fixed; top: 109px; height: 100%; width: 52%; box-shadow: 0px 0px 5px silver; padding: 15px;">
+ 	
+<center>
+ <img src="{% static '\assets\img\slide\2.jpg' %}" alt="" class="img-fluid"
+style="width: 100px;position: fixed; top: 50%; left: 22.5%; transform: scale(5);" 
+	 	>
+	<h1 style="color: #1D3558"> 	Hey there !</h1>
+	<h1 style="position: fixed; top: 73%; left: 10%">Welcome to Community Cafe !</h1>
+</center>
+
+ </div>
+  
+</body>
+</html> -->
+
+
+
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Community Cafe - Login</title>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css'>
+  <link rel="stylesheet" href="{% static 'other/css/logIn.css' %}">
+
+</head>
+<body>
+<div class="close-icon" ><a href="javascript:history.back()"><img src="images/close.png"  width="40px" height="40px"></a></div>
+<div class="container" id="container">
+	
+	
+	<div class="overlay-container">
+		<div class="overlay">
+			<div class="overlay-panel overlay-left">
+				<h1>Enter OTP!</h1>
+				<p>To keep connected with us please login with your personal info</p>
+				<button class="ghost" id="signIn">Sign In</button>
+			</div>
+			<div class="overlay-panel overlay-right">
+				<h1>Hello, Friend!</h1>
+				<p>Please Enter The OTP Received To Your Mobile Number To Activate Your Account</p>
+        <div >
+    <form method="POST">
+    {% csrf_token %}
+    <input type="text" name="mobile_otp" placeholder="Enter OTP.." required minlength="4" maxlength="4">
+    <input class="ghost" type="submit"  name="">
+     {% if message %}
+
+    <p style="color: red; font-weight: bolder; font-family: Arial">**{{message}} Entered**</p>
+
+    {% endif %}
+    <br>
+    <br>
+   
+  </form>
+  </div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- partial -->
+  <script>
+  	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  	const signUpButton = document.getElementById('signUp');
+const signInButton = document.getElementById('signIn');
+const container = document.getElementById('container');
+
+signUpButton.addEventListener('click', () => {
+	container.classList.add("right-panel-active");
+});
+
+signInButton.addEventListener('click', () => {
+	container.classList.remove("right-panel-active");
+});
+
+var currentTab = 0; // Current tab is set to be the first tab (0)
+showTab(currentTab); // Display the current tab
+
+function showTab(n) {
+  // This function will display the specified tab of the form ...
+  var x = document.getElementsByClassName("tab");
+  x[n].style.display = "block";
+  // ... and fix the Previous/Next buttons:
+  if (n == 0) {
+    document.getElementById("prevBtn").style.display = "none";
+  } else {
+    document.getElementById("prevBtn").style.display = "inline";
+  }
+  if (n == (x.length - 1)) {
+    document.getElementById("nextBtn").style = "transform:scale(0.5)";
+  } else {
+    document.getElementById("nextBtn").innerHTML = "Next";
+  }
+  // ... and run a function that displays the correct step indicator:
+  fixStepIndicator(n)
+}
+
+function nextPrev(n) {
+  // This function will figure out which tab to display
+  var x = document.getElementsByClassName("tab");
+  // Exit the function if any field in the current tab is invalid:
+  if (n == 1 && !validateForm()) return false;
+  // Hide the current tab:
+  x[currentTab].style.display = "none";
+  // Increase or decrease the current tab by 1:
+  currentTab = currentTab + n;
+  // if you have reached the end of the form... :
+  if (currentTab >= x.length) {
+    //...the form gets submitted:
+    document.getElementById("regForm").submit();
+    return false;
+  }
+  // Otherwise, display the correct tab:
+  showTab(currentTab);
+}
+
+function validateForm() {
+  // This function deals with validation of the form fields
+  var x, y, i, valid = true;
+  x = document.getElementsByClassName("tab");
+  y = x[currentTab].getElementsByTagName("input");
+  // A loop that checks every input field in the current tab:
+  for (i = 0; i < y.length; i++) {
+    // If a field is empty...
+    if (y[i].value == "") {
+      // add an "invalid" class to the field:
+      y[i].className += " invalid";
+      // and set the current valid status to false:
+      valid = false;
+    }
+  }
+  // If the valid status is true, mark the step as finished and valid:
+  if (valid) {
+    document.getElementsByClassName("step")[currentTab].className += " finish";
+  }
+  return valid; // return the valid status
+}
+
+function fixStepIndicator(n) {
+  // This function removes the "active" class of all steps...
+  var i, x = document.getElementsByClassName("step");
+  for (i = 0; i < x.length; i++) {
+    x[i].className = x[i].className.replace(" active", "");
+  }
+  //... and adds the "active" class to the current step:
+  x[n].className += " active";
+}
+
+function readURL(input) {
+  if (input.files && input.files[0]) {
+      var reader = new FileReader();
+
+      reader.onload = function (e) {
+          $('#blah')
+              .attr('src', e.target.result);
+      };
+
+      reader.readAsDataURL(input.files[0]);
+  }
+}
+  </script>
+
+</body>
+</html>
+
+
+
+

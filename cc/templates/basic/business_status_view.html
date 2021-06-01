@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<h1>Your Businesses</h1>
+
+	{% for b in business_list %}
+
+
+	<p>{{b.owner.username}}</p>
+	<p>{{b.category}}</p>
+	<p>{{b.businessname}}</p>
+	
+	{% if b.verified %}
+
+	<p>Verified</p>
+
+	{% else %}
+
+	<p>Not Verified</p>
+	<a href="{% url 'cc:busVer' id=b.id %}">Upload Documents</a>
+
+	{% endif %}
+<hr>
+	{% endfor %}
+
+</body>
+</html>

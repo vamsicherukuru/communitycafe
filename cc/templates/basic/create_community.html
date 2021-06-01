@@ -1,0 +1,90 @@
+<!<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+	<title>Profile - {{user.username}}</title>
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+
+
+
+	<style type="text/css">
+		
+		@import url('https://fonts.googleapis.com/css2?family=Advent+Pro&display=swap');
+body{
+			font-family: Advent Pro;
+			letter-spacing: 2px;
+
+			
+		}
+
+
+	</style>
+</head>
+<body>
+	<div style="height: px; width: 100%; position: fixed; top: 0px;background: white; padding: 10px; box-shadow: 0px 0px 5px grey;">
+		<h3 style="position: fixed;">
+			
+
+
+
+			<a href="{% url 'cc:homepage' %}" style="text-decoration: none;">&#x2190; BACK TO HOME</a>
+		</h3>
+		<center><h4> <b>Start Your Community</b> </h4></center>
+		<a href="index.html" style="text-decoration: none;position: fixed; right: 0px;top:0px;"><span style="font-size: 20px; font-weight: bolder;">Community Cafe</span><img src="{% static 'loggedinassets/assets/img/cclogo.png' %}" style="width: 60px;" alt="" ></a>
+	
+
+	</div>
+
+
+<div style="position: absolute; top: 150px; right: 450px;">
+	
+<h3>Fill in the Details</h3>
+<hr>
+<form method="POST" id=user.id>
+	{% csrf_token %}
+
+	{{community_form.as_p}}
+	<button class="btn btn-warning" type="submit">Create New Community</button>
+</form>
+
+
+<h6>Terms & Conditions</h6>
+
+
+
+
+</div>
+
+
+<!-- <div style="">
+	<img style="width: 700px;position: absolute;z-index: -5000; top: 100px; " src="{% static '\loggedinassets\assets\img\7.jpg' %}">
+</div>
+ -->
+
+
+
+
+
+	
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

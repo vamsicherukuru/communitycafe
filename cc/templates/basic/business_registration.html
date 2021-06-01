@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<body>
+   <div class="container">
+       
+
+
+        <form method="POST" id="bus_reg_form" enctype="multipart/form-data">
+        {% csrf_token %}
+       {{busreg_form.as_p}}
+          
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+   </div>
+</body>
+<script type="text/javascript">
+  
+  alert("Hello")
+</script>
+<!-- <script type="text/javascript">
+  
+
+  $(document).on('submit','#bus_reg_form', function(e){
+
+      e.preventDefault();
+
+
+      $.ajax({
+        type:'POST'.
+        url:"{% url 'cc:busReg' %}"
+        data:{
+          category:$('#category').val(),
+          businessname:$('#businessname').val(),
+          address:$('#address').val(),
+          caption:$('#caption').val(),
+          business_logo:$('#business_logo').val(),
+          csrfmiddlewaretoken:$('input[name=csrfmiddlewaretoken]').val()
+        },
+        success:function(){
+
+          alert('Created New Business');
+
+        }
+      })
+
+  });
+</script> -->
+</html>
