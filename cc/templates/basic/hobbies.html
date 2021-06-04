@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Community Cafe</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href='https://use.fontawesome.com/releases/v5.7.2/css/all.css'>
+  <link href="{% static 'restauranthomeassets/img/favicon.png' %}" rel="icon">
+  <link href="{% static 'restauranthomeassets/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
+  <link href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Advent+Pro:wght@700&display=swap" rel="stylesheet">
+  <link href='https://fonts.googleapis.com/css?family=Roboto Condensed' rel='stylesheet'>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Jost:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+  <!-- Vendor CSS Files -->
+  <link href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css'>
+  <link href="{% static 'restauranthomeassets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'restauranthomeassets/vendor/icofont/icofont.min.css' %}" rel="stylesheet">
+  <link href="{% static 'restauranthomeassets/vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
+  <link href="{% static 'restauranthomeassets/vendor/remixicon/remixicon.css' %}" rel="stylesheet">
+  <link href="{% static 'restauranthomeassets/vendor/venobox/venobox.css' %}" rel="stylesheet">
+  <link href="{% static 'restauranthomeassets/vendor/owl.carousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
+  <link href="{% static 'restauranthomeassets/vendor/aos/aos.css' %}" rel="stylesheet">
+  <link href='https://use.fontawesome.com/releases/v5.8.1/css/all.css' rel='stylesheet'>
+  <link href="{% static 'restauranthomeassets/vendor/animate.css/animate.min.css' %}" rel="stylesheet">
+  <link href="{% static 'restauranthomeassets/vendor/aos/aos.css' %}" rel="stylesheet">
+  <link href="{% static 'restauranthomeassets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'restauranthomeassets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+  <link href="{% static 'restauranthomeassets/vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
+  <link href="{% static 'restauranthomeassets/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+  <link href="{% static 'restauranthomeassets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+  
+
+
+  <!-- Template Main CSS File -->
+  <link href="{% static 'restauranthomeassets/css/style.css' %}" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'restauranthomeassets/css/Common_interest.css' %}">
+  <link rel="stylesheet" href="{% static 'restauranthomeassets/css/Feeds.css' %}">
+</head>
+
+<body>
+
+    <!-- ======= Side Panel======= -->
+  <div id="mySidepanel" class="sidepanel">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+    <a href="{% url 'cc:homepage' %}">HOME</a>
+    <a href="{% url 'cc:members' %}">NEIGHBOURHOOD</a>
+    <a href="{% url 'cc:marketplacehome' %}">MARKETPLACE</a>
+    <a href="{% url 'cc:groups' %}">HOBBIES & SKILLS</a>
+    <a href="{% url 'cc:givebackhome' %}">GIVE BACK</a>
+    <a href="">EVENTS</a>
+    
+    
+    
+ 
+  </div>
+
+    <!-- ======= Header ======= -->
+    <header id="header" class="fixed-top ">
+      <div class="container d-flex align-items-center">
+  
+        <!--<h1 class="logo mr-auto"><a href="index.html">CCafe</a></h1>-->
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <a href="Homepage_after_login.html" class="logo mr-auto"><img src="{% static 'restauranthomeassets/img/cclogo.png' %}" alt="" class="img-fluid"></a>
+        <a href="#" class=" mr-auto burger " style="left:-36%;" onclick="openNav()">
+          <span></span></a>
+
+            <nav class="nav-menu ">
+              <ul>
+                <li>
+                  <input type="text" placeholder="Search Community Cafe Marketplace" class="searchbar"/ >
+                  <div class="search"></div>
+                </li>
+               <li >
+                  
+
+                  <a href="{% url 'cc:CartView' %}">
+                    <i class="fa fa-shopping-cart circle-icon" style="color:white"></i></a>
+                    <li><a href="Profile.html"><i class="fa fa-user circle-icon" style="color:white"></i>         </a>    </li>      
+                  
+                
+              <li class="dropdown">
+              </li>
+                 <div class="searchOptionsMainContainer">
+                <div class="searchOptions">
+                <div class="searchOptions1-container">
+                  <ul class="searchOptions1">
+                    <span>Jump to</span>
+                    <li class="searchOptions1-links"><a href="#">Entertainment</a></li>
+                    <li class="searchOptions1-links"><a href="#foodies" >Foodies</a></li>
+                    <li class="searchOptions1-links"><a href="#" >Trivia & Quizes</a></li>
+                    <li class="searchOptions1-links"><a href="#" >Bingo</a></li>
+                  </ul>
+                </div>
+                <div class="searchOptions2-container">
+                  <ul class="searchOptions2">
+                    <li class="searchOptions2-links"><a href="#">Health & Wellness</a></li>
+                    <li class="searchOptions2-links"><a href="#" >Meditation</a></li>
+                    <li class="searchOptions2-links"><a href="#" >Chanting Club</a></li>
+                    <li class="searchOptions2-links"><a href="#" >Healthy Recipes</a></li>
+                  </ul>
+                </div>
+                <div class="searchOptions3-container">
+                  <ul class="searchOptions3">
+                    <li class="searchOptions3-links"><a href="#">Hobbies & Skills</a></li>
+                    <li class="searchOptions3-links"><a href="#" >Art Lovers</a></li>
+                    <li class="searchOptions3-links"><a href="#" >Book Club</a></li>
+                    <li class="searchOptions3-links"><a href="#" >Knitting</a></li>
+                  </ul>
+                </div>
+                <div class="searchOptions4-container">
+                  <ul class="searchOptions4">
+                    <li class="searchOptions4-links"><a href="#" >Sports & Leisure</a></li>
+                    <li class="searchOptions4-links"><a href="#" >Golf</a></li>
+                    <li class="searchOptions4-links"><a href="#yoga" >Yoga</a></li>
+                    <li class="searchOptions4-links"><a href="#dance-and-fitness" >Dance Fitness</a></li>
+                  </ul>
+                </div>
+                </div>
+          </ul>
+          </nav><!-- .nav-menu --><!-- .navbar -->
+          </div>
+        </header
+              
+  
+<main id="main"  onclick="hideOptions()" style="margin-top: 70px; overflow-anchor: inherit;">
+
+  <section id="hero" class="d-flex align-items-center ">
+    <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+      <div class="section-title">
+        <h2>Common Interest</h2>
+          <p>Check out the People's Interest
+            </p>
+      </div>
+
+          <div class="tabs">
+          <div class="tabs">
+            <ul class="nav nav-tabs">
+              <li class="nav-item">
+                <a class="nav-link active my" data-bs-toggle="tab" href="#my"
+                  >My Interests</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active my" data-bs-toggle="tab" href="{% url 'cc:groupReg' %}"
+                  >Create Group</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active my" data-bs-toggle="tab" href="{% url 'cc:GroupRequestView' %}"
+                  >Join Group</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link all" data-bs-toggle="tab" href="#all"
+                  >All Interests</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link popular" data-bs-toggle="tab" href="#most"
+                  >Most Popular</a
+                >
+              </li>
+              
+            </ul>
+          </div>
+
+          <div class="tab-content">
+            <div role="tabpanel" class="tab-pane active" id="my">
+              <div class="row icon-boxes">
+              {% for g in groups %}
+                <div class="enter" data-aos="zoom-in" data-aos-delay="200">
+                  <img
+                    src="{% static 'assets/img/Giveback/abstract-blurred-gradient-mesh-background_1159-3173.jpg' %}"
+                    alt="My Interests Image"
+                  />
+                  <h4 class="title">
+                    <a style='top:25%;background-color: rgba(0,0,0,0)' href="{% url 'cc:group_detail' id=g.id %}" ><img src="{{g.group_logo.url}}" style="width: 200px; float: right; border-radius: 50%;"></a>
+                    <a style='top:50% ;background-color: rgba(0,0,0,0) 'href="{% url 'cc:group_detail' id=g.id %}"><h2>{{g.groupname}}</h2></a>
+                    <a style='top:70% ;background-color: rgba(0,0,0,0) 'href="{% url 'cc:group_detail' id=g.id %}"><h2>{{g.caption}}</h2></a>
+<!--                     {% if g.verified %}
+ -->                 <!--    <a style='top:90% ;background-color: rgba(0,0,0,0) 'href="{% url 'cc:group_requests' %}"><p>Verified</p></a>
+                    {% else %}
+                    <div style=" width: 150px; border-radius: 10px ;  background: rgba(200,0,0,0.8);">
+                    <center>                        
+                    <a style='top:90% ;background-color: rgba(0,0,0,0) 'href="{% url 'cc:group_requests' %}"><p">Not a Verified Group</p></a>
+                    </center>
+                </div> -->
+<!--             {% endif %}
+ -->                  </h4>                
+                </div>
+                {% endfor %}
+              </div>
+            </div>
+            {% comment %} <div role="tabpanel" class="tab-pane" id="all">
+              <div class="row icon-boxes">
+                <div class="enter" data-aos="zoom-in" data-aos-delay="200">
+                  <img src="assets/img/Giveback/golf.jpg" alt="" />
+                  <h4 class="title">
+                    <a href="">Sports & Leisure</a>
+                  </h4>
+                </div>
+                <div class="enter" data-aos="zoom-in" data-aos-delay="200">
+                  <img src="{% static 'assets/img/Giveback/cooking.jpg' %}" alt="" />
+                  <h4 class="title">
+                    <a href="">Entertainment</a>
+                  </h4>
+                </div>
+                <div class="enter" data-aos="zoom-in" data-aos-delay="200">
+                  <img src="{% static 'assets/img/Giveback/zen.jpg' %}" alt="" />
+                  <h4 class="title">
+                    <a href="">Health & Wellness</a>
+                  </h4>
+                </div>
+                <div class="enter" data-aos="zoom-in" data-aos-delay="200">
+                  <img src="{% static 'assets/img/Giveback/painting.jpg' %}" alt="" />
+                  <h4 class="title">
+                    <a href="">Hobbies & Skills</a>
+                  </h4>
+                </div>
+              </div>
+            </div>
+            <div role="tabpanel" class="tab-pane" id="most">
+              <div class="row icon-boxes">
+                <div class="enter" data-aos="zoom-in" data-aos-delay="200">
+                  <img src="{% static 'assets/img/Giveback/cooking.jpg' %}" alt="" />
+                  <h4 class="title">
+                    <a href="">Entertainment</a>
+                  </h4>
+                </div>
+                <div class="enter" data-aos="zoom-in" data-aos-delay="200">
+                  <img src="{% static 'assets/img/Giveback/zen.jpg' %}" alt="" />
+                  <h4 class="title">
+                    <a href="">Health & Wellness</a>
+                  </h4>
+                </div>
+                <div class="enter" data-aos="zoom-in" data-aos-delay="200">
+                  <img src="{% static 'assets/img/Giveback/painting.jpg' %}" alt="" />
+                  <h4 class="title">
+                    <a href="">Hobbies & Skills</a>
+                  </h4>
+                </div>
+                <div class="enter" data-aos="zoom-in" data-aos-delay="200">
+                  <img src="{% static 'assets/img/Giveback/golf.jpg' %}" alt="golf" />
+                  <h4 class="title">
+                    <a href="">Sports & Leisure</a>
+                  </h4>
+                </div>
+              </div>
+            </div> {% endcomment %}
+          </div>
+        </div>
+      </div>
+      </section>
+
+{% comment %} <div class="container">
+      
+      
+
+ <div class="col">
+  <a href="{% url 'cc:groupReg' %}" class="btn btn-primary">Make A New Group</a>
+
+  {{group_request_form.as_p}}
+  <a href="{% url 'cc:GroupRequestView' %}" class="btn btn-primary">Request To Join A Group</a>
+
+  {{group_join_form.as_p}}
+  <a href="{% url 'cc:group_requests' %}" class="btn btn-primary">Your Requests</a>
+ </div>
+                        
+
+ {% for g in groups %}
+  <div class="col-md-4">
+      <div class="card">
+        <img src="" class="card-img-top">
+          <div class="card-body">
+            <div class="class-title">
+            <img src="{{g.group_logo.url}}" style="width: 200px; float: right; border-radius: 50%;">
+            </div>
+              <div class="class-text">
+                <h2>{{g.groupname}}</h2>
+                <h2>{{g.admin.username}}</h2>
+                <h2>{{g.caption}}</h2>
+              </div>
+                {% if g.verified %}
+                Verified <br>
+                {% else %}
+                <div style=" width: 150px; border-radius: 10px ;  background: rgba(200,0,0,0.8);">
+                <center>                        
+                  <p style="color: white;">Not a Verified Group</p>
+                </center>
+            </div>
+            {% endif %}
+            <a href="{% url 'cc:group_detail' id=g.id %}" class="btn btn-warning">View Group</a>
+            </div>
+          </div>
+        </div>
+{% endfor %}
+  </div> {% endcomment %}
+
+  </main> <!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+
+
+    <div class="container footer-bottom clearfix">
+      <div class="copyright">
+        &copy; Copyright <strong><span>CCafe</span></strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+        Designed by CC-cupproduct</a>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top"><i class="ri-arrow-up-line"></i></a>
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+  <script src="{% static 'restauranthomeassets/vendor/jquery/jquery.min.js' %}"></script>
+  <script src="{% static 'restauranthomeassets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'restauranthomeassets/vendor/jquery.easing/jquery.easing.min.js' %}"></script>
+  <script src="{% static 'restauranthomeassets/vendor/php-email-form/validate.js' %}"></script>
+  <script src="{% static 'restauranthomeassets/vendor/waypoints/jquery.waypoints.min.js' %}"></script>
+  <script src="{% static 'restauranthomeassets/vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
+  <script src="{% static 'restauranthomeassets/vendor/venobox/venobox.min.js' %}"></script>
+  <script src="{% static 'restauranthomeassets/vendor/owl.carousel/owl.carousel.min.js' %}"></script>
+  <script src="{% static 'restauranthomeassets/vendor/swiper/swiper-bundle.min.js' %}"></script>
+  <script src="{% static 'restauranthomeassets/vendor/aos/aos.js' %}"></script>
+  <script src="{% static 'restauranthomeassets/vendor/purecounter/purecounter.js' %}"></script>
+  <script src="{% static 'restauranthomeassets/vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
+  <script src="{% static 'restauranthomeassets/vendor/glightbox/js/glightbox.min.js' %}"></script>
+  
+  
+
+
+  <!-- Template Main JS File -->
+  <script src="{% static 'restauranthomeassets/js/main.js' %}"></script>
+
+</body>
+
+</html>

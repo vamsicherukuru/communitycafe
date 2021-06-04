@@ -1,0 +1,1915 @@
+{% if user.is_authenticated %}
+
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Community Cafe</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href='https://use.fontawesome.com/releases/v5.7.2/css/all.css'>
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Advent+Pro:wght@700&display=swap" rel="stylesheet">
+  <link href='https://fonts.googleapis.com/css?family=Roboto Condensed' rel='stylesheet'>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Jost:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+  <!-- Vendor CSS Files -->
+  <link href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css'>
+  <link href="{% static 'loggedinassets/assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'loggedinassets/assets/vendor/icofont/icofont.min.css' %}" rel="stylesheet">
+  <link href="{% static 'loggedinassets/assets/vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
+  <link href="{% static 'loggedinassets/assets/vendor/remixicon/remixicon.css' %}" rel="stylesheet">
+  <link href="{% static 'loggedinassets/assets/vendor/venobox/venobox.css' %}" rel="stylesheet">
+  <link href="{% static 'loggedinassets/assets/vendor/owl.carousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css' %}" rel="stylesheet">
+  <link href='https://use.fontawesome.com/releases/v5.8.1/css/all.css' rel='stylesheet'>
+  <link href="{% static 'loggedinassets/assets/vendor/animate.css/animate.min.css' %}" rel="stylesheet">
+  <link href="{% static 'loggedinassets/assets/vendor/aos/aos.css' %}" rel="stylesheet">
+  <link href="{% static 'loggedinassets/assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'loggedinassets/assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+  <link href="{% static 'loggedinassets/assets/vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
+  <link href="{% static 'loggedinassets/assets/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+  <link href="{% static 'loggedinassets/assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+
+
+  <!-- Template Main CSS File -->
+  <link href="{% static 'loggedinassets/assets/css/style.css' %}" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top ">
+    <div class="container d-flex align-items-center">
+
+      <!--<h1 class="logo mr-auto"><a href="index.html">CCafe</a></h1>-->
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <a href="index.html" class="logo mr-auto"><img src="{% static 'loggedinassets/assets/img/cclogo.png' %}" alt="" class="img-fluid"></a>
+
+      <nav class="nav-menu d-none d-lg-block">
+        <ul>
+          <li class="active"><a href="#hero">HOME</a></li> 
+                             <li><a href="{% url 'cc:CommunityRequestView' %}">JOIN COMMUNITY</a></li>
+
+          <li><a href="{% url 'cc:members' %}">NEIGHBOURHOOD</a></li>
+
+          <li><a href="{% url 'cc:marketplacehome' %}">MARKETPLACE</a></li>
+    <li><a href="{% url 'cc:groups' %}">HOBBIES & SKILLS</a></li>
+          <li><a href="{% url 'cc:givebackhome' %}">GIVE BACK</a></li>
+          <li><a href="">EVENTS</a></li>
+
+        </ul>
+      </nav><!-- .nav-menu -->
+
+      <a href="{% url 'cc:profilepage' %}" class="get-started-btn scrollto">{{user.username | upper}}</a>
+
+ <a href="{% url 'cc:Logout' %}" class="get-started-btn scrollto">Logout</a>
+    </div>
+  </header><!-- End Header -->
+
+
+
+  <section id="hero" class="d-flex align-items-center">
+  <div class="container " data-aos="fade-in" data-aos-delay="200">
+    <!input style="float:center"type="text" placeholder="Quick Search"><h1>DISCOVER THE NEIGHBOURHOOD</h1>
+    <p> Your community is where you can get all that you want for you and your family. 
+      Support your community and explore what your neighbourhood has to offer you.
+        Especially during the pandemic, your community needs you to get involved !</p>
+
+</div>
+</section>
+
+  <main id="main">
+
+    <!-- ======= services Section ======= -->
+    <section id="services" class="services">
+
+      <div class="container" data-aos="fade-up">
+
+        <div class="clearfix" id="three">
+          <a name="three"></a>
+          <ul class="tabs">
+          <li style="background-color: #1D3558"><a href="#tab1">HOME BUSINESS</a></li>
+          <li style="background-color: #FF5757"><a href="#tab2">SERVICES</a></li>
+          <i class="fas fa-search fa-2x"></i><input type="text" class="quicksearch" placeholder="Quick Search">  
+          </ul>
+          <div class="tab_container">
+          <div id="tab1" class="tab_content">
+            <div class="row gy-4 services-container" data-aos="fade-up" data-aos-delay="200">
+
+              <div class="col-xl-2 col-md-6 services-item filter-app">
+                <div class="services-wrap">
+                  <img src="{% static 'loggedinassets/assets/img/services/services-1.jpg' %}" class="img-fluid" alt="">
+                  <a href="{% url 'cc:hotelhome' %}">
+                    <div class="services-infos">
+                      <h4>Home Business</h4>
+                    </div>
+                    <div class="bottom-right">HOME BUSINESS</div>
+                  </a>
+                 
+                </div>
+              </div>
+    
+              <div class="col-xl-2 col-md-6 services-item filter-web">
+                <div class="services-wrap down" >
+                  <img src="{% static 'loggedinassets/assets/img/services/services-2.jpg' %}" class="img-fluid" alt="">
+                  <div class="services-infos">
+                    <h4>Local Business</h4>
+                  </div>
+                  <div class="bottom-right">LOCAL BUSINESS</div>
+                </div>                            
+              </div>
+    
+              <div class="col-xl-2 col-md-6 services-item filter-app">
+                <div class="services-wrap">
+                  <img src="{% static 'loggedinassets/assets/img/services/services-3.jpg' %}" class="img-fluid" alt="">
+                  <div class="services-infos">
+                    <h4>Domestic</h4>
+                  </div>
+                  <div class="bottom-right">DOMESTIC</div>
+                </div>
+              </div>
+    
+              <div class="col-xl-2 col-md-6 services-item filter-card">
+                <div class="services-wrap down" >
+                  <img src="{% static 'loggedinassets/assets/img/services/services-4.jpg' %}" class="img-fluid" alt="">
+                  <div class="services-infos">
+                    <h4>Buy & Sell</h4>
+                  </div>
+                  <div class="bottom-right">BUY & SELL</div>
+                </div>
+              </div>
+    
+              <div class="col-xl-2 col-md-6 services-item filter-web">
+                <div class="services-wrap">
+                  <img src="{% static 'loggedinassets/assets/img/services/services-5.jpg' %}" class="img-fluid" alt="">
+                  <div class="services-infos">
+                    <h4>Hobbies/Skill</h4>
+                  </div>
+                  <div class="bottom-right">HOBBIES & SKILLS</div>
+                </div>
+              </div>
+    
+              <div class="col-xl-2 col-md-6 services-item filter-app">
+                <div class="services-wrap down">
+                  <img src="{% static 'loggedinassets/assets/img/services/services-6.jpg' %}" class="img-fluid" alt="">
+                  <div class="services-infos">
+                    <h4>Charity</h4>
+                  </div>
+                  <div class="bottom-right">CHARITY</div>
+                </div>
+              </div>
+    
+            </div>
+    
+          
+          </div>
+          <div id="tab2" class="tab_content">
+          <h3>Coming Soon</h3>
+          </div>
+           </div>
+
+        
+          </div>
+    </section><!-- End services Section -->
+
+     <!-- ======= ads Section ======= -->
+
+     <section id="portfolio" class="portfolio">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>ADS & PROMOTIONS</h2>
+          <p>Check out interesting offers and promotions...Support local business and home entrepreneurs during these challenging times. Be Local Buy Local !
+            </p>
+          </div>
+     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+      </ol>
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner">
+        <div class="carousel-item">
+          <img class="d-block w-100" src="{% static 'loggedinassets/assets/img/Ads/ads1.jpg' %}" data-color="lightblue" alt="First Image">
+          <div class="carousel-caption d-md-block">
+            <h5 class ="adsh5">VISIT BUSINESSS</h5>
+          </div>
+        </div>
+        <div class="carousel-item" >
+          <img class="d-block w-100" src="https://cdn.cdnparenting.com/articles/2019/04/01160822/Profitable-Small-Business-Ideas-289889759-768x525.jpg" data-color="firebrick" alt="Second Image">
+          <div class="carousel-caption d-md-block">
+            <h5 class ="adsh5">VISIT BUSINESSS</h5>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img class="d-block w-100" src="https://www.zenefits.com/workest/wp-content/uploads/2018/11/bigstock-Cheerful-business-owners-stand-232405831-e1542226244501-790x444.jpg" data-color="violet" alt="Third Image">
+          <div class="carousel-caption d-md-block">
+            <h5 class ="adsh5">VISIT BUSINESSS</h5>
+          </div>
+        </div>
+      </div>
+      <!-- Controls -->
+      <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+    </a>
+      <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+    </a>
+    </div>
+    </div>
+  </div>
+  </section><!-- End ads -->
+
+
+  <!-- ======= event Section ======= -->
+  <section id="event" class="event ">
+    <div class="container" data-aos="fade-up">
+
+      <div class="section-title">
+        <h2>EVENTS</h2>
+        <p>Our Community Event Calendar ! There's something for everyone...Join the Fun and Make New Friends ! </p>
+      </div>
+
+      <div class="container">
+        <div id="demo" class="carousel slide" data-ride="carousel">
+
+
+            <div class="carousel-inner">
+              <div class="top left border"></div>
+              <div class="top right border"></div>
+              <div class="bottom left border"></div>
+              <div class="bottom right border"></div>
+              <div class="top left border"></div>
+              <div class="top right border"></div>
+              <div class="bottom left border"></div>
+              <div class="bottom right border"></div>
+                <div class="carousel-item active">
+                    <div class="carousel-caption">
+                      <div class="tevent">EVENT </div>
+                      <div class="ttime">31<sup>st</sup> AUG</div>
+                      <p >If Shai Reznik's TDD videos don't convince you to add automated testing your code, I don't know what will.This was the very best explanation of frameworks for brginners that I've ever seen.</p> 
+                      <a class="get-started-btn scrolltos">ADD TO CALENDAR</a>
+                    </div>
+                </div>
+
+                <div class="carousel-item">
+                  <div class="carousel-caption">
+                    <div class="tevent">EVENT </div>
+                    <div class="ttime">31<sup>st</sup> AUG</div>
+                    <p>If Shai Reznik's TDD videos don't convince you to add automated testing your code, I don't know what will.This was the very best explanation of frameworks for brginners that I've ever seen.</p> 
+                    <a class="get-started-btn scrolltos">ADD TO CALENDAR</a>
+                  </div>
+                </div>
+
+                <div class="carousel-item">
+                  <div class="carousel-caption">
+                    <div class="tevent">EVENT </div>
+                    <div class="ttime">31<sup>st</sup> AUG</div>
+                    <p>If Shai Reznik's TDD videos don't convince you to add automated testing your code, I don't know what will.This was the very best explanation of frameworks for brginners that I've ever seen.</p> 
+                    <a class="get-started-btn scrolltos">ADD TO CALENDAR </a>
+                  </div>
+                </div>
+            </div> <a class="carousel-control-prev" href="#demo" data-slide="prev"> <i class='fas fa-arrow-left'></i> </a> <a class="carousel-control-next" href="#demo" data-slide="next"> <i class='fas fa-arrow-right'></i> </a>
+        </div>
+    </div>
+
+
+  
+    </div>
+  </section><!-- End event Section -->
+
+    <!-- ======= toppicks Section ======= -->
+    <section id="toppicks" class="toppicks">
+      <div class="container " data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>TOP PICKS OF THE WEEK</h2>
+          <p>Kudos to the most popular votes . 
+            Those who havent here is your chance to try out exciting products and services from our community !</p>
+        </div>
+        <div class="gtco-testimonials tops">
+           <div class="owl-carousel owl-carousel1 owl-theme">
+             <div>
+               <div class="card text-center"><img class="card-img-top" src="https://images.unsplash.com/photo-1572561300743-2dd367ed0c9a?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=300&ixid=eyJhcHBfaWQiOjF9&ixlib=rb-1.2.1&q=50&w=300" alt="">
+                 <div class="card-body">
+                   <h5>Ronne Galle <br />
+                     <span> Best Rated Domestic Help</span></h5>
+                     <div class="stars">
+                      <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                    </div>
+                   <p class="card-text">“ Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil
+                     impedit quo minus id quod maxime placeat ” </p>
+                 </div>
+                 <a class="get-started-btn check">CHECK IT OUT</a>
+               </div>               
+             </div>
+             <div>
+               <div class="card text-center"><img class="card-img-top" src="https://images.unsplash.com/photo-1588361035994-295e21daa761?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=301&ixid=eyJhcHBfaWQiOjF9&ixlib=rb-1.2.1&q=50&w=301" alt="">
+                 <div class="card-body">
+                   <h5>Missy Limana<br />
+                     <span> Best Homemaker </span></h5>
+                     <div class="stars">
+                      <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                    </div>
+                   <p class="card-text">“ Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil
+                     impedit quo minus id quod maxime placeat ” </p>
+                 </div>
+                 <a class="get-started-btn check">CHECK IT OUT</a>
+               </div>               
+             </div>
+             <div>
+               <div class="card text-center"><img class="card-img-top" src="https://images.unsplash.com/photo-1575377222312-dd1a63a51638?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=302&ixid=eyJhcHBfaWQiOjF9&ixlib=rb-1.2.1&q=50&w=302" alt="">
+                 <div class="card-body">
+                   <h5>Martha Brown<br />
+                     <span> Most Visited Local Business</span></h5>
+                     <div class="stars">
+                      <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                    </div>
+                   <p class="card-text">“ Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil
+                     impedit quo minus id quod maxime placeat ” </p>
+                 </div>
+                 <a class="get-started-btn check">CHECK IT OUT</a>
+               </div>
+             </div>
+             <div>
+               <div class="card text-center"><img class="card-img-top" src="https://images.unsplash.com/photo-1549836938-d278c5d46d20?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=303&ixid=eyJhcHBfaWQiOjF9&ixlib=rb-1.2.1&q=50&w=303" alt="">
+                 <div class="card-body">
+                   <h5>Hanna Lisem<br />
+                     <span> Charity That Got a Lot of Love </span></h5>
+                     <div class="stars">
+                      <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                    </div>
+                   <p class="card-text">“ Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil
+                     impedit quo minus id quod maxime placeat ” </p>
+                 </div>
+                 <a class="get-started-btn check">CHECK IT OUT</a>
+               </div>
+             </div>
+           </div>
+         </div>
+
+      </div>
+    </section><!-- End toppicks Section -->
+
+   <!-- ======= interest Section ======= -->
+   <section id="interest" class="interest">
+    <div class="container" data-aos="fade-up">
+
+      <div class="section-title">
+        <h2>INTERESTED IN CONTRIBUTING?</h2>
+        <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+      </div>
+
+      <div class="row">
+        
+        <div class="col-lg-6 d-flex align-items-center" data-aos="zoom-out" data-aos-delay="200">
+        <div class="interested-text"><h4>AS A HOME OR LOCAL BUSINESS</h4>            
+          <a class="get-started-btn int">Become a supplier</a>
+        <img src="{% static 'loggedinassets/assets/img/Interest/Interest-1.jpg' %}" class="img-fluid" alt="">
+        </div>
+      </div>
+
+        <div class="col-lg-6 d-flex align-items-center" data-aos="zoom-out" data-aos-delay="200">
+          <div class="interested-text"><h4>AS A CHARITY OR ENVIRONMENT CHAMPION </h4>
+            <a class="get-started-btn int">Register as charity</a>
+          <img src="{% static 'loggedinassets/assets/img/Interest/Interest-2.jpg' %}" class="img-fluid" alt="">
+        </div>
+        </div>
+    </div>
+    </div>
+  </section><!-- End interest Section -->
+
+    <!--    Count Section-->
+    
+    <div class="container" data-aos="fade-up">
+
+    <div class="row justify-content-end">
+      <div class="col-lg-11">
+        <div class="row justify-content-end">
+
+          <div class="col-lg-3 col-md-5 col-6 d-md-flex align-items-md-stretch">
+            <div class="count-box">
+              <h1> Happy <br>Commuters</h1>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-5 col-6 d-md-flex align-items-md-stretch">
+            <div class="count-box">
+              <i class="bi bi-emoji-smile"></i>
+              <span data-purecounter-start="0" data-purecounter-end="1250" data-purecounter-duration="1" class="purecounter"></span>
+
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-5 col-6 d-md-flex align-items-md-stretch">
+            <div class="count-box">
+              <h1>Total <br> Communities</h1>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-5 col-6 d-md-flex align-items-md-stretch">
+            <div class="count-box">
+              <i class="bi bi-journal-richtext"></i>
+              <span data-purecounter-start="0" data-purecounter-end="85" data-purecounter-duration="1" class="purecounter"></span>
+              
+            </div>
+          </div>
+
+        </div>
+      </div>
+      </div>
+    </div>
+
+    <!--  End  Count Section-->
+
+    <!--    Invite Section-->
+
+    <div class="container invites" data-aos="fade-up">
+      <div class="invite_inside">
+        <h2>INVITE YOUR NEIGHBOUR TODAY</h2>
+          <p>Enjoying the community feel ? Share your experience and get your friends and family on board…its your community !</p>
+          <div class="invite_link">        
+            <button type="button" class="btn btn-primary mx-auto btn_link" data-toggle="modal" data-target="#exampleModal"> Invite my neighbour </button>
+    
+          </div>
+        </div>
+
+    </div>
+    
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content col-12">
+            <div class="modal-header">
+                <h5 class="modal-title">Invite</h5> <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span> </button>
+            </div>
+            <div class="modal-body">
+                <div class="icon-container1 d-flex">
+                    <div class="smd"> <i class=" img-thumbnail fab fa-twitter fa-2x" style="color:#4c6ef5;background-color: aliceblue"></i>
+                        <p>Twitter</p>
+                    </div>
+                    <div class="smd"> <i class="img-thumbnail fab fa-facebook fa-2x" style="color: #3b5998;background-color: #eceff5;"></i>
+                        <p>Facebook</p>
+                    </div>
+                    <div class="smd"> <i class="img-thumbnail fab fa-reddit-alien fa-2x" style="color: #FF5700;background-color: #fdd9ce;"></i>
+                        <p>Reddit</p>
+                    </div>
+                    <div class="smd"> <i class="img-thumbnail fab fa-discord fa-2x " style="color: #738ADB;background-color: #d8d8d8;"></i>
+                        <p>Discord</p>
+                    </div>
+                </div>
+                <div class="icon-container2 d-flex">
+                    <div class="smd"> <i class="img-thumbnail fab fa-whatsapp fa-2x" style="color: #25D366;background-color: #cef5dc;"></i>
+                        <p>Whatsapp</p>
+                    </div>
+                    <div class="smd"> <i class="img-thumbnail fab fa-facebook-messenger fa-2x" style="color: #3b5998;background-color: #eceff5;"></i>
+                        <p>Messenger</p>
+                    </div>
+                    <div class="smd"> <i class="img-thumbnail fab fa-telegram fa-2x" style="color: #4c6ef5;background-color: aliceblue"></i>
+                        <p>Telegram</p>
+                    </div>
+                    <div class="smd"> <i class="img-thumbnail fab fa-weixin fa-2x" style="color: #7bb32e;background-color: #daf1bc;"></i>
+                        <p>WeChat</p>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer"> <label style="font-weight: 600">Page Link <span class="message"></span></label><br />
+                <div class="row"> <input class="col-10 ur" type="url" placeholder="https://communitycafe.in" id="myInput" aria-describedby="inputGroup-sizing-default" style="height: 80%;"> <button class="cpy" onclick="myFunction()"><i class="far fa-clone"></i></button> </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--  End Invite Section-->
+
+    <!--    Benifit of Inviting-->
+    <section id="benefits" class="benefits">
+      <div class="container" data-aos="fade-up">
+        <div class="section-title">
+          <h2>How it Works</h2>
+          <p>
+            We believe that our society is in critical need of a more responsible, ethical, trustworthy platform for essential community services and products. 
+          </p>
+        </div>
+    
+        <div class="row" data-aos="zoom-in" data-aos-delay="100">
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+            <div class="member">
+              <img src="{% static 'loggedinassets/assets/img/benefits/benefit-1.jpg' %}" class="img-fluid" alt="">
+              <div class="member-content">
+                <h4>FIND LOCAL</h4>
+                <p>
+                  We are focused on a hyper-local business model of an online community center in the heart of every neighborhood and actively seek their participation In creating trustworthy services and healthy products for the community. The platform looks to nurture talent and entrepreneurs from within the community and build local business through professional mentoring and a collaborative ecosystem across other communities in the city and beyond to impact local initiative and enterprise.
+                  <br><b>Find Yourself, Your Passion, Your Talent</b> 
+                </p>  
+              </div>
+            </div>
+          </div>
+    
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+            <div class="member">
+              <img src="{% static 'loggedinassets/assets/img/benefits/benefit-2.jpg' %}" class="img-fluid" alt="">
+              <div class="member-content">
+                <h4>BELONG SOCIAL</h4>
+                <p>
+                  Utilize this platform to make your community the place you can call your Home. A community is all about the  relationships we  build on common values and interests. Finding like-minded people who can be your friends for life. Explore new skills and hobbies as you discover yourself . Belong and Be Happy Together
+                </p>
+              </div>
+            </div>
+          </div>
+    
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+            <div class="member">
+              <img src="{% static 'loggedinassets/assets/img/benefits/benefit-3.jpg'%}" class="img-fluid" alt="">
+              <div class="member-content">
+                <h4>GROW VOCAL</h4>
+                <p>
+                  Our community is evolving where we are a diverse interest group with varied needs and expectations. Communicate and interact in an inclusive and empowering manner where you can express yourself and the cause you believe in. Encourage the diversity in our communities to interact, network and innovate to create solutions for quality of life and sustainable living. Grow and make a difference to matters you care about !
+                </p>
+              </div>
+            </div>
+          </div>
+    
+        </div>
+    
+      </div>
+    </section>
+    <!--   End Benefit of Inviting-->
+
+<section id="faq" class="faq ">
+  <div class="container" data-aos="fade-up">
+
+    <div class="section-title">
+      <h2>Frequently Asked Questions</h2>
+      <p>We know there's a lot to learn and read about all the integration points of the platform. That's why we're giving you this. More to read, easier to skim.</p>
+    </div>
+
+    <div class="faq-list">
+      <ul>
+        <li data-aos="fade-up" data-aos-delay="100">
+        <a data-toggle="collapse" href="#faq-list-1a" class="collapsed" >About Community Cafe <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+        <div id="faq-list-1a" class="collapse" >
+        <ul>
+        <li data-aos="fade-up" data-aos-delay="100">
+          <i class="bx bx-help-circle icon-help"></i> <a data-toggle="collapse" href="#faq-list-1" class="collapsed">What is Community Cafe? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+            <div id="faq-list-1" class="collapse" data-parent=".faq-list">
+              <p>
+                Our community is a place where we belong. Community reflects working together for a common purpose. Café is a platform where we can interact and network to share and learn from each other. The Community Café is bring the community closer through the Mobile App and build a credible support system and find ways to contribute in a meaningful way to the larger community and social causes. 
+              </p>
+            </div>
+        </li>
+
+        <li data-aos="fade-up" data-aos-delay="200">
+          <i class="bx bx-help-circle icon-help"></i> <a data-toggle="collapse" href="#faq-list-2" class="collapsed">Whom is it meant for?  <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+          <div id="faq-list-2" class="collapse" data-parent=".faq-list">
+            <p>
+              The community café is meant for any community of like-minded people who share common interests – a geographic or virtual community – where you want to create a support system of trustworthy services and quality relationships. 
+            </p>
+          </div>
+        </li>
+
+        <li data-aos="fade-up" data-aos-delay="300">
+          <i class="bx bx-help-circle icon-help"></i> <a data-toggle="collapse" href="#faq-list-3" class="collapsed">Who can join?<i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+          <div id="faq-list-3" class="collapse" data-parent=".faq-list">
+            <p>
+              Are you currently part of a community? Are you looking for a better way to communicate, find members, and collaborate? Then join us!
+            </p>
+          </div>
+        </li>
+
+        <li data-aos="fade-up" data-aos-delay="400">
+          <i class="bx bx-help-circle icon-help"></i> <a data-toggle="collapse" href="#faq-list-4" class="collapsed">Why should I join Community Cafe? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+          <div id="faq-list-4" class="collapse" data-parent=".faq-list">
+            <p>
+              Want to contribute to your community by hosting events, or have a civic issue to take care off, or just want to find others with similar interests? Community Cafe provides a platform for community members to Find, Belong and Grow in their respective communities. For more information about us visit our website and learn more. 
+            </p>
+          </div>
+        </li>
+
+        <li data-aos="fade-up" data-aos-delay="500">
+          <i class="bx bx-help-circle icon-help"></i> <a data-toggle="collapse" href="#faq-list-5" class="collapsed">Why should a community join us? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+          <div id="faq-list-5" class="collapse" data-parent=".faq-list">
+            <p>
+              Is your community looking for:<br>
+                1. An easier way to communicate with your community members without the hassle of getting lost in the clutter of irrelevant messages.<br>
+                2. Create more belonging and interaction with the community through interests, events and engaging conversations<br>
+                3. Foster creativity, collaboration, and entrepreneurship within your community. Of the community! By the community! For the community!<br>
+                4. Enjoy no maximum member restrictions and create inclusivity so that the whole community can be on one platform.<br>
+                5. One place to provide the whole community with phone numbers, and contact details instead of typing them over and over again.
+            </p>
+          </div>
+        </li>
+
+        <li data-aos="fade-up" data-aos-delay="600">
+          <i class="bx bx-help-circle icon-help"></i> <a data-toggle="collapse" class="collapsed" href="#faq-list-6">Where are we available?  <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+          <div id="faq-list-6" class="collapse" data-parent=".faq-list">
+            <p>
+              Currently we are only available in India, but hope to expand across the globe to every community! 
+            </p>
+          </div>
+        </li>
+
+        <li data-aos="fade-up" data-aos-delay="700">
+          <i class="bx bx-help-circle icon-help"></i> <a data-toggle="collapse" href="#faq-list-7" class="collapsed">What devices can we be downloaded on?  <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+          <div id="faq-list-7" class="collapse" data-parent=".faq-list">
+            <p>
+              Right now we are a mobile app, and can be used only on Mobile phones. To download please visit us on Google PlayStore, or Apple IPhone by searching for Community Cafe. We will also be releasing a web version.
+            </p>
+          </div>
+        </li>
+
+        <li data-aos="fade-up" data-aos-delay="800">
+          <i class="bx bx-help-circle icon-help"></i> <a data-toggle="collapse" href="#faq-list-8" class="collapsed">Where to download the app?<i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+          <div id="faq-list-8" class="collapse" data-parent=".faq-list">
+            <p>
+              Our app can be downloaded on both Androids on Google PlayStore, and Apple IPhone AppStore by searching for Community Cafe. 
+            </p>
+          </div>
+        </li>
+
+        <li data-aos="fade-up" data-aos-delay="900">
+          <i class="bx bx-help-circle icon-help"></i> <a data-toggle="collapse" href="#faq-list-9" class="collapsed">Is the app free? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+          <div id="faq-list-9" class="collapse" data-parent=".faq-list">
+            <p>
+              The app is free for all members to download and use. Any additional charges will be based on transactions or services that you require. Although, some communities might require their members to pay a membership fee first, so that they can get their membership number and be validated. This fee is important as it goes back into the community for events, civic issues, general maintenance. 
+            </p>
+          </div>
+        </li>
+        
+        </ul>
+        </div>
+      </li>
+
+        <li data-aos="fade-up" data-aos-delay="200">
+        <a data-toggle="collapse" href="#faq-list-2a" class="collapsed" >How to Get Started ? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+        <div id="faq-list-2a" class="collapse" >
+        <ul>
+        <li data-aos="fade-up" data-aos-delay="200">
+          <i class="bx bx-help-circle icon-help"></i> <a data-toggle="collapse" class="collapsed" href="#faq-list-1">Find your community<i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+          <div id="faq-list-1" class="collapse" data-parent=".faq-list">
+            <p>
+              Whether you are looking to resolve your local civic issues, or find community members with similar interests and hobbies, all you have to do is:<br> 
+                ■ Step 1: Download community cafe from Google Playstore, or Apple App Store<br> 
+                ■ Step 2: Fill in your details and select your community <br> 
+                ■ Step 3: Start Posting! And discover our other features that help you Find, Belong and Contribute to your community. <br> 
+            </p>
+          </div>
+        </li>
+
+        <li data-aos="fade-up" data-aos-delay="300">
+          <i class="bx bx-help-circle icon-help"></i> <a data-toggle="collapse" href="#faq-list-2" class="collapsed">Find your interests  <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+          <div id="faq-list-2" class="collapse" data-parent=".faq-list">
+            <p>
+              Want to join a group of foodies to discuss the best take-away places in the community, or interested in gardening and looking for other horticulturalists around you? <br>
+              ■ Step 1: Join Community Cafe <br>
+              ■ Step 2: Join your community and become a verified member <br>
+              ■ Step 3: Click interest <br>
+              ■ Step 4: Select your interest, and get posting! <br>
+              If you cannot find the interest group you want, click on request a group so we can create it for you. 
+              </p>
+          </div>
+        </li>
+
+        <li data-aos="fade-up" data-aos-delay="400">
+          <i class="bx bx-help-circle icon-help"></i> <a data-toggle="collapse" href="#faq-list-3" class="collapsed">Add members to your community<i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+          <div id="faq-list-3" class="collapse" data-parent=".faq-list">
+            <p>
+              To add members to your community, simply ask friends and neighbours to:<br>
+              ■ Step 1: Download the app from Google Playstore, or the Apple AppStore.<br>
+              ■ Step 2: Fill their details and join the appropriate community.<br>
+              ■ Step 3: Get validated by a Community Admin.<br>
+              ■ Step 4: Find you and start communicating!.<br>
+              For any issues write to us at support@communitycafe.in 
+            </p>
+          </div>
+        </li>
+
+        <li data-aos="fade-up" data-aos-delay="500">
+          <i class="bx bx-help-circle icon-help"></i> <a data-toggle="collapse" href="#faq-list-4" class="collapsed">How to visit Helpdesk? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+          <div id="faq-list-4" class="collapse" data-parent=".faq-list">
+            <p>
+              Our helpdesk is a directory of all numbers you might need to solve any issues you might have in the community. From verified local plumbers, and carpenters to fixing street lights and other issues. It also has a list of CWA members who are available for emergency calls.<br>
+              ■ Step 1: Open your app<br>
+              ■ Step 2: Click HelpDesk<br>
+              ■ Step 3: Find the number you want and click Call!
+              </p>
+          </div>
+        </li>
+
+        <li data-aos="fade-up" data-aos-delay="600">
+          <i class="bx bx-help-circle icon-help"></i> <a data-toggle="collapse" href="#faq-list-5" class="collapsed"> Will I receive notifications? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+          <div id="faq-list-5" class="collapse" data-parent=".faq-list">
+            <p>
+              Like a silent airport we too don’t make unnecessary announcements that might add to your ‘social media message pollution’. However, for events, charity, and emergency situations members will receive a notification. 
+            </p>
+          </div>
+        </li>
+
+        <li data-aos="fade-up" data-aos-delay="700">
+          <i class="bx bx-help-circle icon-help"></i> <a data-toggle="collapse" class="collapsed" href="#faq-list-6">How to add photos and videos?</i><i class="bx bx-chevron-up icon-close"></i></a>
+          <div id="faq-list-6" class="collapse" data-parent=".faq-list">
+            <p>
+              ○ Step 1: Open your app<br>
+              ○ Step 2: Decide where you want to post - interest group/community board etc. <br>
+              ○ Step 3: Click the camera icon<br>
+              ○ Step 4: Upload photo from camera, or gallery <br>
+              ○ Step 5: POST! 
+            </p>
+          </div>
+        </li>
+
+        <li data-aos="fade-up" data-aos-delay="800">
+          <i class="bx bx-help-circle icon-help"></i> <a data-toggle="collapse" href="#faq-list-7" class="collapsed">How to share posts?  <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+          <div id="faq-list-7" class="collapse" data-parent=".faq-list">
+            <p>
+              ○ Step 1: Open your app<br>
+              ○ Step 2: Decide where you want to post - interest group/community board etc. <br>
+              ○ Step 3: Type your post and click POST!
+            </p>
+          </div>
+        </li>
+
+        <li data-aos="fade-up" data-aos-delay="900">
+          <i class="bx bx-help-circle icon-help"></i> <a data-toggle="collapse" href="#faq-list-8" class="collapsed">Events Calendar <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+          <div id="faq-list-8" class="collapse" data-parent=".faq-list">
+            <p>
+              ○ Step 1: Open your app<br>
+              ○ Step 2: Click more<br>
+              ○ Step 3: Open your bulletin<br>
+              ○ Step 4: Click events and check out what’s happening in your community schedule! 
+
+            </p>
+          </div>
+        </li>
+
+        </ul>
+        </div>
+        </li>
+
+        <li data-aos="fade-up" data-aos-delay="300">
+        <a data-toggle="collapse" href="#faq-list-3a" class="collapsed" >How to use Community Cafe?<i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+        <div id="faq-list-3a" class="collapse" >
+        <ul>
+        <li data-aos="fade-up" data-aos-delay="300">
+          <i class="bx bx-help-circle icon-help"></i> <a data-toggle="collapse" href="#faq-list-1" class="collapsed">How to build your own community on the app? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+          <div id="faq-list-1" class="collapse" data-parent=".faq-list">
+            <p>
+              ○ It’s simple! Just email us at support@communitycafe.in and tell us the name of your community. <br>
+              ○ Let us know if you can verify your community members or have a current process so we can validate and do a background check. 
+            </p>
+          </div>
+        </li>
+
+        
+        <li data-aos="fade-up" data-aos-delay="400">
+          <i class="bx bx-help-circle icon-help"></i> <a data-toggle="collapse" href="#faq-list-2" class="collapsed">Collaborate with Community Cafe<i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+          <div id="faq-list-2" class="collapse" data-parent=".faq-list">
+            <p>
+              Are you interested in working with us and helping us expand our vision for communities around the globe? Then write to us at support@communitycafe.in and tell us how you would like to collaborate. 
+            </p>
+          </div>
+        </li>
+
+        <li data-aos="fade-up" data-aos-delay="500">
+          <i class="bx bx-help-circle icon-help"></i> <a data-toggle="collapse" href="#faq-list-3" class="collapsed">Starting a business <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+          <div id="faq-list-3" class="collapse" data-parent=".faq-list">
+            <p>
+              Recently learned to bake banana bread and see a business opportunity, or having entrepreneurial ideas in your interest group. Start the conversation and see how your community reacts to your ideas.   
+            </p>
+          </div>
+        </li>
+
+        <li data-aos="fade-up" data-aos-delay="600">
+          <i class="bx bx-help-circle icon-help"></i> <a data-toggle="collapse" class="collapsed" href="#faq-list-4">How to give back to the community</i><i class="bx bx-chevron-up icon-close"></i></a>
+          <div id="faq-list-4" class="collapse" data-parent=".faq-list">
+            <p>
+              Know a local charity that needs help, or a hyper local business suffering because of this pandemic. Post about them, hold auctions and find volunteers so that you can give back to the community. 
+            </p>
+          </div>
+        </li>
+
+        <li data-aos="fade-up" data-aos-delay="700">
+          <i class="bx bx-help-circle icon-help"></i> <a data-toggle="collapse" href="#faq-list-5" class="collapsed">Support hyper-local business   <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+          <div id="faq-list-5" class="collapse" data-parent=".faq-list">
+            <p>
+              Have specialised skills and think those around you might benefit from them. Write about them in the interest group — Skills, or other specialised gifts, and help your community succeed. 
+            </p>
+          </div>
+        </li>
+        </ul>
+        </div>
+        </li>
+
+        <li data-aos="fade-up" data-aos-delay="400">
+        <a data-toggle="collapse" href="#faq-list-4a" class="collapsed" >Safety, Privacy and Community Cafe Policies<i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+        <div id="faq-list-4a" class="collapse" >
+        <ul>
+        <li data-aos="fade-up" data-aos-delay="400">
+          <i class="bx bx-help-circle icon-help"></i> <a data-toggle="collapse" href="#faq-list-1" class="collapsed">Will my data be safe/private ? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+          <div id="faq-list-1" class="collapse" data-parent=".faq-list">
+            <p>
+              We take utmost care and precautions to ensure your personal data and privacy is protected. At no point will your data be shared without your approval, acceptance, or consent. However, data security is limited to the extent of internet access, which may not be in our purview
+            </p>
+          </div>
+        </li>
+
+        <li data-aos="fade-up" data-aos-delay="500">
+          <i class="bx bx-help-circle icon-help"></i> <a data-toggle="collapse" href="#faq-list-2" class="collapsed">Our safety policy  <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+          <div id="faq-list-2" class="collapse" data-parent=".faq-list">
+            <p>
+              Our vision is to foster conversations and collaborations within communities, and build safe networks. Any activity or communication that does not serve the interest of the community by inciting divisiveness, polarisation, fraud or other unethical behaviour will be met with necessary action including termination of membership from our app. 
+              </p>
+          </div>
+        </li>
+
+        <li data-aos="fade-up" data-aos-delay="600">
+          <i class="bx bx-help-circle icon-help"></i> <a data-toggle="collapse" href="#faq-list-3" class="collapsed"> Verification of members <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+          <div id="faq-list-3" class="collapse" data-parent=".faq-list">
+            <p>
+              ○ Having community members is key to our app and therefore validation will be a requirement. <br>
+              ○ Once you join you might be asked to either type in your membership number as given by your CWA or community committee. If not, we will carry out a check and may request for further proof if required. <br>
+              ○ If you want to join as a business or service provider you must meet our criteria and must be recommended by at least 2-3 registered community members. If you cannot meet these criteria you will be disabled from the app.
+            </p>
+          </div>
+        </li>
+
+        <li data-aos="fade-up" data-aos-delay="700">
+          <i class="bx bx-help-circle icon-help"></i> <a data-toggle="collapse" class="collapse" href="#faq-list-4">Can other communities see me and my community?</i><i class="bx bx-chevron-up icon-close"></i></a>
+          <div id="faq-list-4" class="collapse" data-parent=".faq-list">
+            <p>
+              No, each community is created as its own ecosystem and can only be accessed by validated members.  
+            </p>
+          </div>
+        </li>
+
+        <li data-aos="fade-up" data-aos-delay="800">
+          <i class="bx bx-help-circle icon-help"></i> <a data-toggle="collapse" href="#faq-list-5" class="collapsed">Can I quit community cafe?   <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+          <div id="faq-list-5" class="collapse" data-parent=".faq-list">
+            <p>
+              Yes, you have the option to quit our app, and uninstall us. 
+            </p>
+          </div>
+        </li>
+
+        <li data-aos="fade-up" data-aos-delay="900">
+          <i class="bx bx-help-circle icon-help"></i> <a data-toggle="collapse" href="#faq-list-6" class="collapsed">Can I join multiple communities?  <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+          <div id="faq-list-6" class="collapse" data-parent=".faq-list">
+            <p>
+              Yes, you can do so. However, you must provide authentic identity verification in each different community and must be validated and verified for each.
+            </p>
+          </div>
+        </li>
+        </ul>
+        </div>
+        </li>
+
+      </ul>
+    </div>
+
+  </div>
+</section><!-- End Frequently Asked Questions Section -->
+
+
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="contact">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>FACING ANY ISSUES, OR HAVE ANY QUESTIONS?</h2>
+          <p>GET IN TOUCH WITH US THROUGH THIS FORMs</p>
+        </div>
+
+        <div class="row mt-5">
+
+          <div class="col-lg-4">
+            <div class="info">
+              <div class="signup">
+                <i class="bi bi-geo-alt"></i>
+                <h4>New Here:</h4>
+                <p>Signup Here</p>
+              </div>
+
+              <div class="email">
+                <i class="bi bi-envelope"></i>
+                <h4>Email:</h4>
+                <p>helpdesk@ccafe.com</p>
+              </div>
+
+              <div class="phone">
+                <i class="bi bi-phone"></i>
+                <h4>Call:</h4>
+                <p>+1 5589 55488 55s</p>
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="col-lg-8 mt-5 mt-lg-0">
+
+            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+              <div class="row">
+                <div class="col-md-6 form-group">
+                  <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+                </div>
+                <div class="col-md-6 form-group mt-3 mt-md-0">
+                  <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+                </div>
+              </div>
+              <div class="form-group mt-3">
+                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
+              </div>
+              <div class="form-group mt-3">
+                <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
+              </div>
+              <div class="my-3">
+                <div class="loading">Loading</div>
+                <div class="error-message"></div>
+                <div class="sent-message">Your message has been sent. Thank you!</div>
+              </div>
+              <div class="text-center"><button type="submit">Send Message</button></div>
+            </form>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Contact Section -->
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6 footer-contact">
+            <h3>Community Cafe</h3>
+            <p>
+              Bangalore <br>
+              Karnataka, India<br>
+              Asia <br>
+              <strong>Phone:</strong> +91 99955 55488<br>
+              <strong>Email:</strong> info@example.com<br>
+            </p>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">services</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Platform toppicks</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Ammenities</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Events</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Surety</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Bookings</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Discussion Forum</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Our Social Networks</h4>
+            <p>A Step Towards Connecting the Society & Establishing a Dynamic Network</p>
+            <div class="social-links mt-3">
+              <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+              <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+              <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+              <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+              <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container footer-bottom clearfix">
+      <div class="copyright">
+        &copy; Copyright <strong><span>CCafe</span></strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+        Designed by CC-Team</a>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top"><i class="ri-arrow-up-line"></i></a>
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+  <script src="{% static 'loggedinassets/assets/vendor/jquery/jquery.min.js'%}"></script>
+  <script src="{% static 'loggedinassets/assets/vendor/bootstrap/js/bootstrap.bundle.min.js'%}"></script>
+  <script src="{% static 'loggedinassets/assets/vendor/jquery.easing/jquery.easing.min.js'%}"></script>
+  <script src="{% static 'loggedinassets/assets/vendor/php-email-form/validate.js'%}"></script>
+  <script src="{% static 'loggedinassets/assets/vendor/waypoints/jquery.waypoints.min.js'%}"></script>
+  <script src="{% static 'loggedinassets/assets/vendor/isotope-layout/isotope.pkgd.min.js'%}"></script>
+  <script src="{% static 'loggedinassets/assets/vendor/venobox/venobox.min.js'%}"></script>
+  <script src="{% static 'loggedinassets/assets/vendor/owl.carousel/owl.carousel.min.js'%}"></script>
+  <script src="{% static 'loggedinassets/assets/vendor/swiper/swiper-bundle.min.js'%}"></script>
+  <script src="{% static 'loggedinassets/assets/vendor/aos/aos.js'%}"></script>
+  <script src="{% static 'loggedinassets/assets/vendor/purecounter/purecounter.js'%}"></script>
+  <script src="{% static 'loggedinassets/assets/vendor/isotope-layout/isotope.pkgd.min.js'%}"></script>
+  <script src="{% static 'loggedinassets/assets/vendor/glightbox/js/glightbox.min.js'%}"></script>
+  
+  
+
+
+  <!-- Template Main JS File -->
+  <script src="{% static 'loggedinassets/assets/js/main.js' %}"></script>
+
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% else %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Community Cafe</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href='https://use.fontawesome.com/releases/v5.7.2/css/all.css'>
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Advent+Pro:wght@700&display=swap" rel="stylesheet">
+  <link href='https://fonts.googleapis.com/css?family=Roboto Condensed' rel='stylesheet'>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Jost:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+  <!-- Vendor CSS Files -->
+  <link href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css'>
+  <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/icofont/icofont.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/remixicon/remixicon.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/venobox/venobox.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
+  <link href="{% static 'assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href='https://use.fontawesome.com/releases/v5.8.1/css/all.css' rel='stylesheet'>
+  <link href="{% static 'assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+  <link href="{% static 'assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="{% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="{% static 'assets/vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+
+
+  <!-- Template Main CSS File -->
+  <link href="{% static 'assets/css/style.css' %}" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top ">
+    <div class="container d-flex align-items-center">
+
+      <!--<h1 class="logo mr-auto"><a href="index.html">CCafe</a></h1>-->
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <a href="index.html" class="logo mr-auto"><img src="{% static 'assets/img/cclogo.png' %}" alt="" class="img-fluid"></a>
+
+      <nav class="nav-menu d-none d-lg-block">
+        <ul>
+          <li class="active"><a href="#hero">ABOUT US</a></li>          
+          <li><a href="#works">HOW IT WORKS</a></li>
+          <li><a href="#benefits">OUR SERVICES</a></li>
+          <li><a href="#missions">OUR MISSION</a></li>
+          <li><a href="#neighborhood">NEIGHBOURHOOD</a></li>
+          <li><a href="#faq">FAQ</a></li>
+
+        </ul>
+      </nav><!-- .nav-menu -->
+
+      <a href="{% url 'cc:LoginView' %}" class="get-started-btn scrollto">LOGIN</a>
+
+    </div>
+  </header><!-- End Header -->
+
+
+
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="d-flex align-items-center">
+
+    <div class="container">
+      <div class="row" >
+        <div class="col-lg-6 d-flex flex-column justify-content-center pt-4 pt-lg-0 order-2 order-lg-1 herotext" data-aos="fade-up" data-aos-delay="200">
+          <h3>Welcome to </h3 >
+          <h1>Community Cafe</h1>
+          <h2>FIND YOUR COMMUNITY TODAY</h2>
+          <div class="d-flex justify-content-center justify-content-lg-start">
+          <input type="number" placeholder="Enter Pincode" class="pincode" > <i class="fas fa-search"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section><!-- End Hero -->
+
+  <main id="main">
+
+    <section class="slide2" id="works">
+      <div class="row container-fluid">
+        <div class="col-lg-5 col-md-6  slide2-img-div">
+          <img class="slide2-img" src="{% static 'assets/img/ads.jpg' %}" alt="computer-img">
+        </div>
+  
+        <div class="col-lg-7 col-md-6 slide2-content">
+          <h2>BUILDING NEIGHBOURHOODS INTO COMMUNITIES</h2>
+          <p>Community Café aims to bring a “Community” closer with a view to build a credible support system, provide a platform to interact and network on common interests and find ways to contribute in a meaningful way to
+            the larger Community and its identified social causes. The name “Community Café” is to denote the online avatar of the old fashioned, brick and mortar “friendly neighborhood café” where members of a Community meet and interact in an
+            informal and friendly setting, building relationships and support systems.</p>
+        </div>
+  
+      </div>
+  
+    </section>
+
+    <!--    Benifit of Inviting-->
+    <section id="benefits" class="benefits">
+      <div class="container" data-aos="fade-up">
+        <div class="section-title">
+          <h2><br><br>How it Works</h2>
+          <p>
+            We believe that our society is in critical need of a more responsible, ethical, trustworthy platform for essential community services and products. 
+          </p>
+        </div>
+
+        <div class="row" data-aos="zoom-in" data-aos-delay="100">
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+            <div class="member">
+              <img src="{% static 'assets/img/benefits/benefit-1.jpg' %}" class="img-fluid" alt="">
+              <div class="member-content">
+                <h4>FIND LOCAL</h4>
+                <p>
+                  We are focused on a hyper-local business model of an online community center in the heart of every neighborhood and actively seek their participation In creating trustworthy services and healthy products for the community. The platform looks to nurture talent and entrepreneurs from within the community and build local business through professional mentoring and a collaborative ecosystem across other communities in the city and beyond to impact local initiative and enterprise.
+                  <br><b>Find Yourself, Your Passion, Your Talent</b> 
+                </p>  
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+            <div class="member">
+              <img src="{% static 'assets/img/benefits/benefit-2.jpg' %}" class="img-fluid" alt="">
+              <div class="member-content">
+                <h4>BELONG SOCIAL</h4>
+                <p>
+                  Utilize this platform to make your community the place you can call your Home. A community is all about the  relationships we  build on common values and interests. Finding like-minded people who can be your friends for life. Explore new skills and hobbies as you discover yourself . Belong and Be Happy Together
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+            <div class="member">
+              <img src="{% static 'assets/img/benefits/benefit-3.jpg' %}" class="img-fluid" alt="">
+              <div class="member-content">
+                <h4>GROW VOCAL</h4>
+                <p>
+                  Our community is evolving where we are a diverse interest group with varied needs and expectations. Communicate and interact in an inclusive and empowering manner where you can express yourself and the cause you believe in. Encourage the diversity in our communities to interact, network and innovate to create solutions for quality of life and sustainable living. Grow and make a difference to matters you care about !
+                </p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+    <!--   End Benefit of Inviting-->
+
+    <!--   Our Mission Section ---------------->
+    <section id="missions" class="missions">
+      <div class="container continer-fluid">
+
+        <div class="section-title">
+          <h2 class="chd slide5-hd">OUR MISSION IS TO IMPROVE</h2>
+          <p class="cpara slide5-para">BUILD HEALTHY COMMUNITIES FOR QUALITY OF LIFE AND SUSTAINABLE LIVING</p>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+            <div class="icon-box">
+              <div class="icon"><i class="bx bxl-dribbble"></i></div>
+              <h4 class="title"><a href="">Economic Oppurtunity</a></h4>
+              <p class="description">Everyone needs a livelihood to play a meaningful role and what better place than to start within the community. We all need services and products that can be fulfilled by the talent and skills of those around us.
+                In turn we offer everyone an opportunity to achieve financial independence for sustainable living.</p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+            <div class="icon-box">
+              <div class="icon"><i class="bx bx-file"></i></div>
+              <h4 class="title"><a href="">Education</a></h4>
+              <p class="description">We all have dreams to become. Education is the means to develop ourselves with the knowledge and skills to achieve those dreams. It says it takes a community to raise a child, each of us can make a valuable
+                contribution to the growth of another.</p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+            <div class="icon-box">
+              <div class="icon"><i class="bx bx-tachometer"></i></div>
+              <h4 class="title"><a href="">Belonging</a></h4>
+              <p class="description">We all want a place where we are accepted. Our community is where we have everyday interactions with friends and neighbours whom we can be ourselves with, sharing and disovering who we are. A supportive community
+                is a happy one.</p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+            <div class="icon-box">
+              <div class="icon"><i class="bx bx-world"></i></div>
+              <h4 class="title"><a href="">Giving Back</a></h4>
+              <p class="description">Come together and solve the everyday challenges that we see around us and make a difference to a cause you care about. Give back generously your time, your resources, your ideas to local charities, initiatives to
+                build a better commmunity.</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Our Services Section -->
+
+
+    <!--    Our Neighbourhood        -->
+    <section id="neighborhood" class="neighborhood">
+      <div class="container neighbourhood-div" data-aos="fade-up">
+        <table>
+          <tr>
+            <td class="neighbourhood-box">
+              <!-- <div class="neighbourhood-side-divs"></div> -->
+            </td>
+            <td>
+              <div class="neighbourhood-subtable">
+                <table>
+                  <tr>
+                    <td>
+                      <h2>ARE YOU A NEIGHBOURHOOD TRYING TO BUILD COMMUNITY?</h2>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <p>Is your community looking for:
+                        <ul>
+                          <li> An easier way to communicate with your community members without the hassle of getting lost in the clutter of irrelevant messages</li>
+                          <li> Create more belonging and interaction with the community through interests, events and engaging conversations</li>
+                          <li> Foster creativity, collaboration, and entrepreneurship within your community. Of the community! By the community! For the community!</li>
+                        </ul>
+                      </p>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><img class="neighbourhood-imgs" src="{% static 'assets/img/Neighbourhood/neighbour-1.jpg' %}" alt="image"></td>
+                  </tr>  
+                </table>
+              </div>
+  
+              <div class="neighbourhood-subtable">
+                <table>
+                  <tr>
+                    <td>
+                      <h2>ARE YOU A LOCAL BUSINESS TRYING TO REACH YOUR COMMUNITY?</h2>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <p>Recently learned to bake banana bread and see a business opportunity? 
+                        Or do you have entrepreneurial ideas.want to expand your business and reach more customers. 
+                        Start the conversation and see how your community responds to what you have to offer.</p>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><img class="neighbourhood-imgs" src="{% static 'assets/img/Neighbourhood/neighbour-2.jpg' %}" alt="image"></td>
+                  </tr>
+  
+                </table>
+              </div>
+              <div class="neighbourhood-subtable">
+                <table>
+                  <tr>
+                    <td>
+                      <h2>ARE YOU A LOCAL CHARITY TRYING TO REACH YOUR COMMUNITY?</h2>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <p>Do you want to reach out and spread the joy of giving back to those less privileged or 
+                        Do you need help, volunteers, professionals who can get involved and support generously to social impact of your local charity ?</p>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><img class="neighbourhood-imgs" src="{% static 'assets/img/Neighbourhood/neighbour-3.jpg' %}" alt="image"></td>
+                  </tr>
+                </table>
+              </div>
+            </td>
+          </tr>
+        </table>
+        <div class="neighbourhood-bottom-divs"> </div>
+  
+  
+      </div>
+    </section>
+
+
+
+<section id="faq" class="faq ">
+  <div class="container" data-aos="fade-up">
+
+    <div class="section-title">
+      <h2>Frequently Asked Questions</h2>
+      <p>We know there's a lot to learn and read about all the integration points of the platform. That's why we're giving you this. More to read, easier to skim.</p>
+    </div>
+
+    <div class="faq-list">
+      <ul>
+        <li data-aos="fade-up" data-aos-delay="100">
+        <a data-toggle="collapse" href="#faq-list-1a" class="collapsed" >About Community Cafe <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+        <div id="faq-list-1a" class="collapse" >
+        <ul>
+        <li data-aos="fade-up" data-aos-delay="100">
+          <i class="bx bx-help-circle icon-help"></i> <a data-toggle="collapse" href="#faq-list-1" class="collapsed">What is Community Cafe? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+            <div id="faq-list-1" class="collapse" data-parent=".faq-list">
+              <p>
+                Our community is a place where we belong. Community reflects working together for a common purpose. Café is a platform where we can interact and network to share and learn from each other. The Community Café is bring the community closer through the Mobile App and build a credible support system and find ways to contribute in a meaningful way to the larger community and social causes. 
+              </p>
+            </div>
+        </li>
+
+        <li data-aos="fade-up" data-aos-delay="200">
+          <i class="bx bx-help-circle icon-help"></i> <a data-toggle="collapse" href="#faq-list-2" class="collapsed">Whom is it meant for?  <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+          <div id="faq-list-2" class="collapse" data-parent=".faq-list">
+            <p>
+              The community café is meant for any community of like-minded people who share common interests – a geographic or virtual community – where you want to create a support system of trustworthy services and quality relationships. 
+            </p>
+          </div>
+        </li>
+
+        <li data-aos="fade-up" data-aos-delay="300">
+          <i class="bx bx-help-circle icon-help"></i> <a data-toggle="collapse" href="#faq-list-3" class="collapsed">Who can join?<i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+          <div id="faq-list-3" class="collapse" data-parent=".faq-list">
+            <p>
+              Are you currently part of a community? Are you looking for a better way to communicate, find members, and collaborate? Then join us!
+            </p>
+          </div>
+        </li>
+
+        <li data-aos="fade-up" data-aos-delay="400">
+          <i class="bx bx-help-circle icon-help"></i> <a data-toggle="collapse" href="#faq-list-4" class="collapsed">Why should I join Community Cafe? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+          <div id="faq-list-4" class="collapse" data-parent=".faq-list">
+            <p>
+              Want to contribute to your community by hosting events, or have a civic issue to take care off, or just want to find others with similar interests? Community Cafe provides a platform for community members to Find, Belong and Grow in their respective communities. For more information about us visit our website and learn more. 
+            </p>
+          </div>
+        </li>
+
+        <li data-aos="fade-up" data-aos-delay="500">
+          <i class="bx bx-help-circle icon-help"></i> <a data-toggle="collapse" href="#faq-list-5" class="collapsed">Why should a community join us? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+          <div id="faq-list-5" class="collapse" data-parent=".faq-list">
+            <p>
+              Is your community looking for:<br>
+                1. An easier way to communicate with your community members without the hassle of getting lost in the clutter of irrelevant messages.<br>
+                2. Create more belonging and interaction with the community through interests, events and engaging conversations<br>
+                3. Foster creativity, collaboration, and entrepreneurship within your community. Of the community! By the community! For the community!<br>
+                4. Enjoy no maximum member restrictions and create inclusivity so that the whole community can be on one platform.<br>
+                5. One place to provide the whole community with phone numbers, and contact details instead of typing them over and over again.
+            </p>
+          </div>
+        </li>
+
+        <li data-aos="fade-up" data-aos-delay="600">
+          <i class="bx bx-help-circle icon-help"></i> <a data-toggle="collapse" class="collapsed" href="#faq-list-6">Where are we available?  <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+          <div id="faq-list-6" class="collapse" data-parent=".faq-list">
+            <p>
+              Currently we are only available in India, but hope to expand across the globe to every community! 
+            </p>
+          </div>
+        </li>
+
+        <li data-aos="fade-up" data-aos-delay="700">
+          <i class="bx bx-help-circle icon-help"></i> <a data-toggle="collapse" href="#faq-list-7" class="collapsed">What devices can we be downloaded on?  <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+          <div id="faq-list-7" class="collapse" data-parent=".faq-list">
+            <p>
+              Right now we are a mobile app, and can be used only on Mobile phones. To download please visit us on Google PlayStore, or Apple IPhone by searching for Community Cafe. We will also be releasing a web version.
+            </p>
+          </div>
+        </li>
+
+        <li data-aos="fade-up" data-aos-delay="800">
+          <i class="bx bx-help-circle icon-help"></i> <a data-toggle="collapse" href="#faq-list-8" class="collapsed">Where to download the app?<i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+          <div id="faq-list-8" class="collapse" data-parent=".faq-list">
+            <p>
+              Our app can be downloaded on both Androids on Google PlayStore, and Apple IPhone AppStore by searching for Community Cafe. 
+            </p>
+          </div>
+        </li>
+
+        <li data-aos="fade-up" data-aos-delay="900">
+          <i class="bx bx-help-circle icon-help"></i> <a data-toggle="collapse" href="#faq-list-9" class="collapsed">Is the app free? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+          <div id="faq-list-9" class="collapse" data-parent=".faq-list">
+            <p>
+              The app is free for all members to download and use. Any additional charges will be based on transactions or services that you require. Although, some communities might require their members to pay a membership fee first, so that they can get their membership number and be validated. This fee is important as it goes back into the community for events, civic issues, general maintenance. 
+            </p>
+          </div>
+        </li>
+        
+        </ul>
+        </div>
+      </li>
+
+        <li data-aos="fade-up" data-aos-delay="200">
+        <a data-toggle="collapse" href="#faq-list-2a" class="collapsed" >How to Get Started ? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+        <div id="faq-list-2a" class="collapse" >
+        <ul>
+        <li data-aos="fade-up" data-aos-delay="200">
+          <i class="bx bx-help-circle icon-help"></i> <a data-toggle="collapse" class="collapsed" href="#faq-list-1">Find your community<i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+          <div id="faq-list-1" class="collapse" data-parent=".faq-list">
+            <p>
+              Whether you are looking to resolve your local civic issues, or find community members with similar interests and hobbies, all you have to do is:<br> 
+                ■ Step 1: Download community cafe from Google Playstore, or Apple App Store<br> 
+                ■ Step 2: Fill in your details and select your community <br> 
+                ■ Step 3: Start Posting! And discover our other features that help you Find, Belong and Contribute to your community. <br> 
+            </p>
+          </div>
+        </li>
+
+        <li data-aos="fade-up" data-aos-delay="300">
+          <i class="bx bx-help-circle icon-help"></i> <a data-toggle="collapse" href="#faq-list-2" class="collapsed">Find your interests  <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+          <div id="faq-list-2" class="collapse" data-parent=".faq-list">
+            <p>
+              Want to join a group of foodies to discuss the best take-away places in the community, or interested in gardening and looking for other horticulturalists around you? <br>
+              ■ Step 1: Join Community Cafe <br>
+              ■ Step 2: Join your community and become a verified member <br>
+              ■ Step 3: Click interest <br>
+              ■ Step 4: Select your interest, and get posting! <br>
+              If you cannot find the interest group you want, click on request a group so we can create it for you. 
+              </p>
+          </div>
+        </li>
+
+        <li data-aos="fade-up" data-aos-delay="400">
+          <i class="bx bx-help-circle icon-help"></i> <a data-toggle="collapse" href="#faq-list-3" class="collapsed">Add members to your community<i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+          <div id="faq-list-3" class="collapse" data-parent=".faq-list">
+            <p>
+              To add members to your community, simply ask friends and neighbours to:<br>
+              ■ Step 1: Download the app from Google Playstore, or the Apple AppStore.<br>
+              ■ Step 2: Fill their details and join the appropriate community.<br>
+              ■ Step 3: Get validated by a Community Admin.<br>
+              ■ Step 4: Find you and start communicating!.<br>
+              For any issues write to us at support@communitycafe.in 
+            </p>
+          </div>
+        </li>
+
+        <li data-aos="fade-up" data-aos-delay="500">
+          <i class="bx bx-help-circle icon-help"></i> <a data-toggle="collapse" href="#faq-list-4" class="collapsed">How to visit Helpdesk? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+          <div id="faq-list-4" class="collapse" data-parent=".faq-list">
+            <p>
+              Our helpdesk is a directory of all numbers you might need to solve any issues you might have in the community. From verified local plumbers, and carpenters to fixing street lights and other issues. It also has a list of CWA members who are available for emergency calls.<br>
+              ■ Step 1: Open your app<br>
+              ■ Step 2: Click HelpDesk<br>
+              ■ Step 3: Find the number you want and click Call!
+              </p>
+          </div>
+        </li>
+
+        <li data-aos="fade-up" data-aos-delay="600">
+          <i class="bx bx-help-circle icon-help"></i> <a data-toggle="collapse" href="#faq-list-5" class="collapsed"> Will I receive notifications? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+          <div id="faq-list-5" class="collapse" data-parent=".faq-list">
+            <p>
+              Like a silent airport we too don’t make unnecessary announcements that might add to your ‘social media message pollution’. However, for events, charity, and emergency situations members will receive a notification. 
+            </p>
+          </div>
+        </li>
+
+        <li data-aos="fade-up" data-aos-delay="700">
+          <i class="bx bx-help-circle icon-help"></i> <a data-toggle="collapse" class="collapsed" href="#faq-list-6">How to add photos and videos?</i><i class="bx bx-chevron-up icon-close"></i></a>
+          <div id="faq-list-6" class="collapse" data-parent=".faq-list">
+            <p>
+              ○ Step 1: Open your app<br>
+              ○ Step 2: Decide where you want to post - interest group/community board etc. <br>
+              ○ Step 3: Click the camera icon<br>
+              ○ Step 4: Upload photo from camera, or gallery <br>
+              ○ Step 5: POST! 
+            </p>
+          </div>
+        </li>
+
+        <li data-aos="fade-up" data-aos-delay="800">
+          <i class="bx bx-help-circle icon-help"></i> <a data-toggle="collapse" href="#faq-list-7" class="collapsed">How to share posts?  <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+          <div id="faq-list-7" class="collapse" data-parent=".faq-list">
+            <p>
+              ○ Step 1: Open your app<br>
+              ○ Step 2: Decide where you want to post - interest group/community board etc. <br>
+              ○ Step 3: Type your post and click POST!
+            </p>
+          </div>
+        </li>
+
+        <li data-aos="fade-up" data-aos-delay="900">
+          <i class="bx bx-help-circle icon-help"></i> <a data-toggle="collapse" href="#faq-list-8" class="collapsed">Events Calendar <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+          <div id="faq-list-8" class="collapse" data-parent=".faq-list">
+            <p>
+              ○ Step 1: Open your app<br>
+              ○ Step 2: Click more<br>
+              ○ Step 3: Open your bulletin<br>
+              ○ Step 4: Click events and check out what’s happening in your community schedule! 
+
+            </p>
+          </div>
+        </li>
+
+        </ul>
+        </div>
+        </li>
+
+        <li data-aos="fade-up" data-aos-delay="300">
+        <a data-toggle="collapse" href="#faq-list-3a" class="collapsed" >How to use Community Cafe?<i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+        <div id="faq-list-3a" class="collapse" >
+        <ul>
+        <li data-aos="fade-up" data-aos-delay="300">
+          <i class="bx bx-help-circle icon-help"></i> <a data-toggle="collapse" href="#faq-list-1" class="collapsed">How to build your own community on the app? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+          <div id="faq-list-1" class="collapse" data-parent=".faq-list">
+            <p>
+              ○ It’s simple! Just email us at support@communitycafe.in and tell us the name of your community. <br>
+              ○ Let us know if you can verify your community members or have a current process so we can validate and do a background check. 
+            </p>
+          </div>
+        </li>
+
+        
+        <li data-aos="fade-up" data-aos-delay="400">
+          <i class="bx bx-help-circle icon-help"></i> <a data-toggle="collapse" href="#faq-list-2" class="collapsed">Collaborate with Community Cafe<i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+          <div id="faq-list-2" class="collapse" data-parent=".faq-list">
+            <p>
+              Are you interested in working with us and helping us expand our vision for communities around the globe? Then write to us at support@communitycafe.in and tell us how you would like to collaborate. 
+            </p>
+          </div>
+        </li>
+
+        <li data-aos="fade-up" data-aos-delay="500">
+          <i class="bx bx-help-circle icon-help"></i> <a data-toggle="collapse" href="#faq-list-3" class="collapsed">Starting a business <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+          <div id="faq-list-3" class="collapse" data-parent=".faq-list">
+            <p>
+              Recently learned to bake banana bread and see a business opportunity, or having entrepreneurial ideas in your interest group. Start the conversation and see how your community reacts to your ideas.   
+            </p>
+          </div>
+        </li>
+
+        <li data-aos="fade-up" data-aos-delay="600">
+          <i class="bx bx-help-circle icon-help"></i> <a data-toggle="collapse" class="collapsed" href="#faq-list-4">How to give back to the community</i><i class="bx bx-chevron-up icon-close"></i></a>
+          <div id="faq-list-4" class="collapse" data-parent=".faq-list">
+            <p>
+              Know a local charity that needs help, or a hyper local business suffering because of this pandemic. Post about them, hold auctions and find volunteers so that you can give back to the community. 
+            </p>
+          </div>
+        </li>
+
+        <li data-aos="fade-up" data-aos-delay="700">
+          <i class="bx bx-help-circle icon-help"></i> <a data-toggle="collapse" href="#faq-list-5" class="collapsed">Support hyper-local business   <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+          <div id="faq-list-5" class="collapse" data-parent=".faq-list">
+            <p>
+              Have specialised skills and think those around you might benefit from them. Write about them in the interest group — Skills, or other specialised gifts, and help your community succeed. 
+            </p>
+          </div>
+        </li>
+        </ul>
+        </div>
+        </li>
+
+        <li data-aos="fade-up" data-aos-delay="400">
+        <a data-toggle="collapse" href="#faq-list-4a" class="collapsed" >Safety, Privacy and Community Cafe Policies<i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+        <div id="faq-list-4a" class="collapse" >
+        <ul>
+        <li data-aos="fade-up" data-aos-delay="400">
+          <i class="bx bx-help-circle icon-help"></i> <a data-toggle="collapse" href="#faq-list-1" class="collapsed">Will my data be safe/private ? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+          <div id="faq-list-1" class="collapse" data-parent=".faq-list">
+            <p>
+              We take utmost care and precautions to ensure your personal data and privacy is protected. At no point will your data be shared without your approval, acceptance, or consent. However, data security is limited to the extent of internet access, which may not be in our purview
+            </p>
+          </div>
+        </li>
+
+        <li data-aos="fade-up" data-aos-delay="500">
+          <i class="bx bx-help-circle icon-help"></i> <a data-toggle="collapse" href="#faq-list-2" class="collapsed">Our safety policy  <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+          <div id="faq-list-2" class="collapse" data-parent=".faq-list">
+            <p>
+              Our vision is to foster conversations and collaborations within communities, and build safe networks. Any activity or communication that does not serve the interest of the community by inciting divisiveness, polarisation, fraud or other unethical behaviour will be met with necessary action including termination of membership from our app. 
+              </p>
+          </div>
+        </li>
+
+        <li data-aos="fade-up" data-aos-delay="600">
+          <i class="bx bx-help-circle icon-help"></i> <a data-toggle="collapse" href="#faq-list-3" class="collapsed"> Verification of members <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+          <div id="faq-list-3" class="collapse" data-parent=".faq-list">
+            <p>
+              ○ Having community members is key to our app and therefore validation will be a requirement. <br>
+              ○ Once you join you might be asked to either type in your membership number as given by your CWA or community committee. If not, we will carry out a check and may request for further proof if required. <br>
+              ○ If you want to join as a business or service provider you must meet our criteria and must be recommended by at least 2-3 registered community members. If you cannot meet these criteria you will be disabled from the app.
+            </p>
+          </div>
+        </li>
+
+        <li data-aos="fade-up" data-aos-delay="700">
+          <i class="bx bx-help-circle icon-help"></i> <a data-toggle="collapse" class="collapse" href="#faq-list-4">Can other communities see me and my community?</i><i class="bx bx-chevron-up icon-close"></i></a>
+          <div id="faq-list-4" class="collapse" data-parent=".faq-list">
+            <p>
+              No, each community is created as its own ecosystem and can only be accessed by validated members.  
+            </p>
+          </div>
+        </li>
+
+        <li data-aos="fade-up" data-aos-delay="800">
+          <i class="bx bx-help-circle icon-help"></i> <a data-toggle="collapse" href="#faq-list-5" class="collapsed">Can I quit community cafe?   <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+          <div id="faq-list-5" class="collapse" data-parent=".faq-list">
+            <p>
+              Yes, you have the option to quit our app, and uninstall us. 
+            </p>
+          </div>
+        </li>
+
+        <li data-aos="fade-up" data-aos-delay="900">
+          <i class="bx bx-help-circle icon-help"></i> <a data-toggle="collapse" href="#faq-list-6" class="collapsed">Can I join multiple communities?  <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+          <div id="faq-list-6" class="collapse" data-parent=".faq-list">
+            <p>
+              Yes, you can do so. However, you must provide authentic identity verification in each different community and must be validated and verified for each.
+            </p>
+          </div>
+        </li>
+        </ul>
+        </div>
+        </li>
+
+      </ul>
+    </div>
+
+  </div>
+</section><!-- End Frequently Asked Questions Section -->
+
+
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="contact">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>FACING ANY ISSUES, OR HAVE ANY QUESTIONS?</h2>
+          <p>GET IN TOUCH WITH US THROUGH THIS FORMs</p>
+        </div>
+
+        <div class="row mt-5">
+
+          <div class="col-lg-4">
+            <div class="info">
+              <div class="signup">
+                <i class="bi bi-geo-alt"></i>
+                <h4>New Here:</h4>
+                <p>Signup Here</p>
+              </div>
+
+              <div class="email">
+                <i class="bi bi-envelope"></i>
+                <h4>Email:</h4>
+                <p>helpdesk@communitycafe.com</p>
+              </div>
+
+              <div class="phone">
+                <i class="bi bi-phone"></i>
+                <h4>Call:</h4>
+                <p>+1 5589 55488 55s</p>
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="col-lg-8 mt-5 mt-lg-0">
+
+            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+              <div class="row">
+                <div class="col-md-6 form-group">
+                  <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+                </div>
+                <div class="col-md-6 form-group mt-3 mt-md-0">
+                  <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+                </div>
+              </div>
+              <div class="form-group mt-3">
+                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
+              </div>
+              <div class="form-group mt-3">
+                <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
+              </div>
+              <div class="my-3">
+                <div class="loading">Loading</div>
+                <div class="error-message"></div>
+                <div class="sent-message">Your message has been sent. Thank you!</div>
+              </div>
+              <div class="text-center"><button type="submit">Send Message</button></div>
+            </form>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Contact Section -->
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6 footer-contact">
+            <h3>Community Cafe</h3>
+            <p>
+              Bangalore <br>
+              Karnataka, India<br>
+              Asia <br>
+              <strong>Phone:</strong> +91 99955 55488<br>
+              <strong>Email:</strong> info@example.com<br>
+            </p>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">services</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Platform toppicks</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Ammenities</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Events</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Surety</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Bookings</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Discussion Forum</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Our Social Networks</h4>
+            <p>A Step Towards Connecting the Society & Establishing a Dynamic Network</p>
+            <div class="social-links mt-3">
+              <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+              <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+              <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+              <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+              <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container footer-bottom clearfix">
+      <div class="copyright">
+        &copy; Copyright <strong><span>CCafe</span></strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+        Designed by CC-Team</a>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <!---Floating Search Icon-->
+  <div class="back-to-top event__search__floater ">
+    <div class="search__anchor">
+      <form id="event-search-form" action="get">
+            <input type="text" class="search__bar" placeholder="Pincode">
+        <input class="search__submit" type="submit">
+        <div class="search__toggler"></div>
+      </form>
+      
+      </div>
+    </div>
+
+    <!-----------End Of Floating Search Icon-->
+
+  <a href="#" class="back-to-top"><i class="ri-arrow-up-line"></i></a>
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+  <script src="{% static 'assets/vendor/jquery/jquery.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/jquery.easing/jquery.easing.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/php-email-form/validate.js' %}"></script>
+  <script src="{% static 'assets/vendor/waypoints/jquery.waypoints.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/venobox/venobox.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/owl.carousel/owl.carousel.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/swiper/swiper-bundle.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/aos/aos.js' %}"></script>
+  <script src="{% static 'assets/vendor/purecounter/purecounter.js' %}"></script>
+  <script src="{% static 'assets/vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/glightbox/js/glightbox.min.js' %}"></script>
+  
+  
+
+
+  <!-- Template Main JS File -->
+  <script src="{% static 'assets/js/main.js' %}"></script>
+
+</body>
+
+</html>
+
+{% endif %}

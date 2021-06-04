@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-sale=1.0" name="viewport" />
+
+    <title>WELCOME {{user.username | upper}}</title>
+    <meta content="" name="description" />
+    <meta content="" name="keywords" />
+
+    <!-- Favicons -->
+    <link href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" />
+    <link href="assets/img/favicon.png" rel="icon" />
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
+    <link href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Advent+Pro:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto Condensed"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Jost:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"
+    />
+
+    <!-- Vendor CSS Files -->
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+    <link
+      href="{% static 'profilepageassets/vendor/bootstrap/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link href="{% static 'profilepageassets/vendor/icofont/icofont.min.css' %}" rel="stylesheet" />
+    <link href="{% static 'profilepageassets/vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet" />
+    <link href="{% static 'profilepageassets/vendor/remixicon/remixicon.css' %}" rel="stylesheet" />
+    <link href="{% static 'profilepageassets/vendor/venobox/venobox.css' %}" rel="stylesheet" />
+    <link
+      href="{% static 'profilepageassets/vendor/owl.carousel/assets/owl.carousel.min.css' %}"
+      rel="stylesheet"
+    />
+    <link href="{% static 'profilepageassets/vendor/aos/aos.css' %}" rel="stylesheet" />
+    <link
+      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css' %}"
+      rel="stylesheet"
+    />
+    <link href="{% static 'profilepageassets/vendor/animate.css/animate.min.css' %}" rel="stylesheet" />
+    <link href="{% static 'profilepageassets/vendor/aos/aos.css' %}" rel="stylesheet" />
+    <link
+      href="{% static 'profilepageassets/vendor/bootstrap/css/bootstrap.min.css' %}"
+      rel="stylesheet"
+    />
+    <link
+      href="{% static 'profilepageassets/vendor/bootstrap-icons/bootstrap-icons.css' %}"
+      rel="stylesheet"
+    />
+    <link href="{% static 'profilepageassets/vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet" />
+    <link
+      href="{% static 'profilepageassets/vendor/glightbox/css/glightbox.min.css' %}"
+      rel="stylesheet"
+    />
+    <link href="{% static 'profilepageassets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet" />
+
+    <!-- Template Main CSS File -->
+    <link href="{% static 'profilepageassets/css/style.css' %}" rel="stylesheet" />
+
+    <!-- =======================================================
+  * Template Name: OnePage - v4.1.0
+  * Template URL: https://bootstrapmade.com/onepage-multipurpose-bootstrap-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700"
+      rel="stylesheet"
+    />
+
+
+    <style>
+    	
+
+.image--cover {
+  width: 170px;
+  height: 170px;
+  border-radius: 50%;
+  
+
+  object-fit: cover;
+  object-position: center;
+  border:5px solid white;
+  box-shadow: 0px 0px 5px grey;
+}
+.wrapper {
+  padding: 10px;
+  background-color: white;
+  width: 500px;
+  margin-top: 10px;
+  color: black;
+/*  box-shadow-right: 0px 0px 10px grey;
+*//*  background-image: linear-gradient(to right bottom, )
+*/}
+.wholewrapper {
+  padding: 10px;
+  background-color: white;
+  width: 100%;
+  margin-top: 50px;
+  
+}
+    </style>
+  </head>
+
+  <body>
+    <div class="main-content">
+      <!-- Top navbar -->
+      <nav class="navbar navbar-top navbar-dark" id="navbar-main">
+        <div class="container-fluid">
+          <!-- Brand -->
+          <a href="index.html" class="logo mr-auto"
+            ><img
+              src="{% static 'profilepageassets/img/img/cclogo.png' %}"
+              alt="CClogo"
+              class="img-fluid"
+          /></a>
+          <a
+            class="h4 mb-0 text-uppercase d-none d-lg-inline-block"
+            href="https://www.creative-tim.com/product/argon-dashboard"
+            target="_blank"
+            >User profile</a
+          >
+          <!-- Form -->
+          <form
+            class="
+              navbar-search navbar-search-dark
+              form-inline
+              mr-3
+              d-none d-md-flex
+              ml-lg-auto
+            "
+          >
+            <div class="form-group mb-0">
+              <div class="input-group input-group-alternative">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"
+                    ><i class="fas fa-search"></i
+                  ></span>
+                </div>
+                <input class="form-control" placeholder="Search" type="text" />
+              </div>
+            </div>
+          </form>
+          <!-- User -->
+          <ul class="navbar-nav align-items-center d-none d-md-flex">
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link pr-0"
+                href="#"
+                role="button"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                <div class="media align-items-center">
+                  <a href="#"><i class="fas fa-user-circle"></i> </a>
+                  <div class="nav-user">
+                    <span>Hi, {{user.username}}</span>
+                  </div>
+                </div>
+              </a>
+              <div
+                class="dropdown-menu dropdown-menu-arrow dropdown-menu-right"
+              >
+                <div class="dropdown-header noti-title">
+                  <h6 class="text-overflow m-0">Welcome!</h6>
+                </div>
+                <a href="../examples/profile.html" class="dropdown-item">
+                  <i class="ni ni-single-02"></i>
+                  <span>My profile</span>
+                </a>
+                <a href="../examples/profile.html" class="dropdown-item">
+                  <i class="ni ni-settings-gear-65"></i>
+                  <span>Settings</span>
+                </a>
+                <a href="../examples/profile.html" class="dropdown-item">
+                  <i class="ni ni-calendar-grid-58"></i>
+                  <span>Activity</span>
+                </a>
+                <a href="../examples/profile.html" class="dropdown-item">
+                  <i class="ni ni-support-16"></i>
+                  <span>Support</span>
+                </a>
+                <div class="dropdown-divider"></div>
+                <a href="#!" class="dropdown-item">
+                  <i class="ni ni-user-run"></i>
+                  <span>Logout</span>
+                </a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <!-- Header -->
+      <div class="header pb-8 pt-5 pt-lg-8 d-flex align-items-center">
+        <!-- Mask -->
+        <span class="mask bg-gradient-default opacity-8"></span>
+        <!-- Header container -->
+        <div class="container-fluid d-flex align-items-center">
+          <div class="row">
+            <div class="col-lg-7 col-md-10"></div>
+          </div>
+        </div>
+      </div>
+      <!-- Page content -->
+      <div class="container-fluid mt--7">
+        <div class="row">
+          <div class="col-xl">
+            <div class="card card-profile shadow">
+              <div class="row justify-content-center">
+                <div class="col-lg-3 order-lg-2">
+                  <div class="card-profile-image">
+                    <a href="#">
+                      <img
+                        src="{{user.userprofile.profile_pic.url}}"
+                        class="rounded-circle image--cover"
+                      />
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="
+                  card-header
+                  text-center
+                  border-0
+                  pt-8 pt-md-4
+                  pb-0 pb-md-4
+                "
+              >
+                <div class="d-flex justify-content-between">
+                 {% if request.user == user %}
+ <a href="#" class="btn btn-sm btn-info mr-4">Update</a>
+                  <a href="{% url 'cc:myrequests' %}" class="btn btn-sm btn-default float-right"
+                    >Requests</a
+                  >
+                 {% else %}
+ <a href="#" class="btn btn-sm btn-info mr-4">Connect</a>
+                  <a href="#" class="btn btn-sm btn-default float-right"
+                    >Message</a
+                  >
+                 {% endif %}
+                </div>
+              </div>
+              <div class="card-body pt-0 pt-md-4">
+                <div class="row">
+                  <div class="col">
+                    <div
+                      class="
+                        card-profile-stats
+                        d-flex
+                        justify-content-center
+                        mt-md-5
+                      "
+                    >
+                      <div>
+                        <span class="name"
+                          ><h2>{{ user.first_name}} {{user.last_name}}</h2></span
+                        >
+                        <span class="email">{{user.email}}</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="community">
+                  <h4>Small description about you</h4>
+                  <div class="community-Location">Lives in Bangalore, India</div>
+                  <hr class="my-4" />
+                </div>
+                <div class="h3 mt-4"><h3>Address</h3></div>
+                <p class="address-para">{{user.userprofile.houseNumber}}
+<br>{{user.userprofile.Area_Name.Area_Name}}, {{user.userprofile.city}},  {{user.userprofile.state}}, India - {{user.userprofile.Area_Name.pincode}}
+                </p>
+                <div class="h3 mt-4" style="display: flex">
+                  <h3>Mobile</h3>
+                  <p class="mobile-para">{{user.userprofile.mobileNumber | slice:"5"}}XXXXX</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-8 order-xl-1">
+       				                    <h3 class="mb-0" style="color: white">My Posts</h3>
+
+          		{% for cposts in cps %}
+    <div class="card bg-secondary shadow">
+              <div class="card-header border-0">
+                <div class="row align-items-center">
+                  <div class="col-8">
+<!--                     <h3 class="mb-0">My Posts</h3>
+ -->                  </div>
+                  <div class="col-4 text-right">
+                    <a href="#!" class="btn btn-sm btn-primary">Update</a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card-body">{{cposts.text_body | safe}}
+ 
+
+              	<p style="text-shadow: 0px 0px 1px black;">Community name: {{cposts.community.Community_Name}}</p>
+                <p>Posted by you on {{cposts.timestamp}}</p>
+              </div>
+            </div>
+            <br>
+          		{% endfor %}
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="footer"></footer>
+  </body>
+</html>
+
+
+<!-- 
+
+
+<div class="wholewrapper">
+	
+
+
+
+
+	<div class="wrapper">
+		<center><img src="{{user.userprofile.profile_pic.url}}" class="image--cover">
+
+<div>
+			<h4  style="font-weight: bolder; letter-spacing: 3px;">{{user.first_name}} {{user.last_name}}</h4>
+			<h6 style="letter-spacing: 4px;color:  #FF5757; font-weight: bolder; ">Hey There</h6>
+
+			<a href="" style="text-decoration: none">&#9998;Edit Bio</a>
+		</div>
+
+		<table class="table" style="width: 60%">
+		<tr >
+			<td>Username</td>
+			<td>{{user.username}}</td>
+
+		</tr>
+		<tr >
+			<td>Email</td>
+			<td>{{user.email}}</td>
+
+		</tr>
+		<tr >
+			<td>Joined on</td>
+			<td>{{user.userprofile.joined_on}}</td>
+
+		</tr>
+		<tr >
+			<td>Mobile</td>
+			<td>{{user.userprofile.mobileNumber}}</td>
+
+		</tr>
+		</table>
+		</center>
+		
+	</div>
+
+<div class="remdetails"  style="position: absolute; top: 100px; width: 800px; right: 25px;">
+
+<div>
+
+	<a href="{% url 'cc:myrequests' %}" class="btn" style="background-image: linear-gradient(to right bottom, white,#1D3558); color: white; margin-right: 20px; border-radius: 0px;
+">My Requests</a>
+
+	<a href="{% url 'cc:buslist' %}" class="btn" style="background-image: linear-gradient(to right bottom, white,#1D3558); color: white; margin-right: 20px; border-radius: 0px;
+">Service Provider</a>
+	
+</div>
+
+<br>
+
+	<h4 style="font-weight: bolder; color: #FF5757
+;">My Details</h4>
+
+<h5>Full Address</h5>
+<p>{{user.userprofile.houseNumber}}, {{user.userprofile.Area_Name.Area_Name}}, <br>{{user.userprofile.city}}, {{user.userprofile.state}},<br>{{user.userprofile.Area_Name.pincode}}</p>
+
+	<h4 style="font-weight: bolder; color: #FF5757
+;">Brief about me</h4>
+	<p>	Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<h4 style="font-weight: bolder; color: #FF5757
+;">Account & General Settings</h4>
+
+<h6><a href="" style="text-decoration: none">
+	Change Your Account Settings
+</a></h6>
+<h6><a href="" style="text-decoration: none">
+	Change your password
+</a></h6>
+
+	</div>
+
+
+</div>
+
+
+	
+</body>
+</html> -->

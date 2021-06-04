@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+{% load static %}
+{% load humanize %}
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Community Cafe</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href='https://use.fontawesome.com/releases/v5.7.2/css/all.css'>
+  <link href="{% static 'restauranthomeassets/img/favicon.png' %}" rel="icon">
+  <link href="{% static 'restauranthomeassets/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
+  <link href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Advent+Pro:wght@700&display=swap" rel="stylesheet">
+  <link href='https://fonts.googleapis.com/css?family=Roboto Condensed' rel='stylesheet'>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Jost:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+  <!-- Vendor CSS Files -->
+  <link href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css'>
+  <link href="{% static 'restauranthomeassets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'restauranthomeassets/vendor/icofont/icofont.min.css' %}" rel="stylesheet">
+  <link href="{% static 'restauranthomeassets/vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
+  <link href="{% static 'restauranthomeassets/vendor/remixicon/remixicon.css' %}" rel="stylesheet">
+  <link href="{% static 'restauranthomeassets/vendor/venobox/venobox.css' %}" rel="stylesheet">
+  <link href="{% static 'restauranthomeassets/vendor/owl.carousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
+  <link href="{% static 'restauranthomeassets/vendor/aos/aos.css' %}" rel="stylesheet">
+  <link href='https://use.fontawesome.com/releases/v5.8.1/css/all.css' rel='stylesheet'>
+  <link href="{% static 'restauranthomeassets/vendor/animate.css/animate.min.css' %}" rel="stylesheet">
+  <link href="{% static 'restauranthomeassets/vendor/aos/aos.css' %}" rel="stylesheet">
+  <link href="{% static 'restauranthomeassets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'restauranthomeassets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+  <link href="{% static 'restauranthomeassets/vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
+  <link href="{% static 'restauranthomeassets/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+  <link href="{% static 'restauranthomeassets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+  {% comment %} <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"> {% endcomment %}
+
+
+  <!-- Template Main CSS File -->
+  <link href="{% static 'restauranthomeassets/css/style.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'restauranthomeassets/css/Common_interest.css' %}">
+  <link rel="stylesheet" href="{% static 'restauranthomeassets/css/Feeds.css' %}">
+</head>
+
+<body>
+
+    <!-- ======= Side Panel======= -->
+  <div id="mySidepanel" class="sidepanel">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+    <a href="{% url 'cc:homepage' %}">HOME</a>
+    <a href="{% url 'cc:members' %}">NEIGHBOURHOOD</a>
+    <a href="{% url 'cc:marketplacehome' %}">MARKETPLACE</a>
+    <a href="{% url 'cc:groups' %}">HOBBIES & SKILLS</a>
+    <a href="{% url 'cc:givebackhome' %}">GIVE BACK</a>
+    <a href="">EVENTS</a>
+ <a href="{% url 'cc:myorders' %}">MY ORDERS</a>
+  </div>
+
+    <!-- ======= Header ======= -->
+    <header id="header" class="fixed-top ">
+      <div class="container d-flex align-items-center">
+  
+        <!--<h1 class="logo mr-auto"><a href="index.html">CCafe</a></h1>-->
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <a href="index.html" class="logo mr-auto"><img src="{% static 'restauranthomeassets/img/cclogo.png' %}" alt="" class="img-fluid"></a>
+        <a href="#" class=" mr-auto burger " style="left:-36%;" onclick="openNav()">
+          <span></span></a>
+
+            <nav class="nav-menu d-none d-lg-block">
+              <ul>
+                <li>
+                  <input type="text" placeholder="Search Community Cafe Marketplace" class="searchbar"/ >
+                  <div class="search"></div>
+                </li>
+
+                <li style="margin-left: 50px;">
+                  
+
+                  <a href="{% url 'cc:CartView' %}">
+                    <i class="fa fa-shopping-cart circle-icon" style="color:white"></i>
+                  </a>
+                </li>    
+               
+                  
+
+
+  
+
+
+                </li>    </a>
+                <li><i class="fa fa-user circle-icon" style="color:white"></i></li>      
+              </ul>
+              <div class="dropdown-content">  
+                <div class="row">
+                  <div class="column" style="background-color: #1D3558;">
+                    <h3>Home Business</h3>
+                    <a href="#">Food</a>
+                    <a href="#">Fitness</a>
+                    <a href="#">Arts & Crafts</a>
+                  </div>
+                  <div class="column" style="background-color: #FF5757;">
+                    <h3>Domestic</h3>
+                    <a href="#">Cook</a>
+                    <a href="#">Driver</a>
+                    <a href="#">Gardener</a>
+                  </div>
+                </div>
+              </div>
+              
+            </nav><!-- .nav-menu -->          
+      </div>
+    </header><!-- End Header -->
+  
+<main id="main">
+
+  <section id="hero" class="d-flex align-items-center ">
+    <div class="container" data-aos="fade-up">
+
+ <img src="{{detail_object.group_logo.url}}" style="width: 300px; float: right;">
+      <div class="section-title">
+        <h2>Welcome to {{detail_object.groupname}}</h2>
+        <p>{{detail_object.caption}}</p>
+      </div>
+  
+         
+
+</section>
+
+  <section>
+<div class=" container wrap">
+    <div><h1 class="title">Posts</h1></div>
+    <p class="reply">
+    </p>
+
+      <a style='margin-left:880px;' , class="btn btn-outline-primary" href="{% url 'cc:newgrouppost' id=id  %}"> Post something in your Group</a>
+     <br>
+
+   <!-- Content Row Feeds -->
+     <div class="row">
+      <!-- Area Chart -->
+                        <div class="col-xl-12 col-lg-12 feeds" >
+                            <div class="card shadow mb-4">
+                                <!-- Card Header - Dropdown -->
+                                <div
+                                    class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                    <h3 class=" font-weight-bold ">Discussion Board</h3>
+                                    <div class="dropdown no-arrow">
+                                        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+                                        </a>
+                                        <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
+                                            aria-labelledby="dropdownMenuLink">
+                                            <div class="dropdown-header">Options:</div>
+                                            <a class="dropdown-item" href="#">Filter By</a>
+                                            <a class="dropdown-item" href="#">Sort By</a>
+                                            <div class="dropdown-divider"></div>
+                                            <a class="dropdown-item" href="#">Something else here</a>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+       
+     
+     {% for gposts in gps %}
+     
+     <div style="border:1px solid silver; padding: 10px;">
+     <ul class="panel-activity__list">
+         <li class="activity">
+          <i class="activity__list__icon fa fa-question-circle-o"></i>
+            <div class="activity__list__header">  
+     <div class="" >
+        <img src="{{gposts.author.userprofile.profile_pic.url}}" alt=""/>
+        <a href="#">{{gposts.author.first_name}} {{gposts.author.last_name}}</a>
+        <br>{{gposts.timestamp | naturaltime}}<br> 
+          {% if gposts.attachment_pic %}
+          <a href="#">{{gposts.title}}</a>
+     </div>
+
+  <div class="activity__list__body entry-content">
+      <p>
+        <strong>{{gposts.text_body | linebreaks}}<br></strong>
+        <img src="{{gposts.attachment_pic.url}}">
+      </p>
+  </div>
+
+  {% else %}
+
+  <div class="activity__list__body entry-content">
+    <p>
+      <strong>{{gposts.title}}</strong>
+      <em>{{gposts.text_body | linebreaks}}</em>
+    </p>
+  </div>
+  
+    {% endif %}
+    <form method="post">
+     {% csrf_token %}
+     {{ comment_form.as_p }}
+        <button type="submit" class="btn btn-primary">Comment</button>
+        <input type="hidden" value={{ gposts.id }} name= "id"/>
+    </form>
+
+  <div class="activity__list__footer">
+    <a href="#"> <i class="fa fa-thumbs-up"></i>123</a>
+    <a href="#"> <i class="fa fa-comments"></i>23</a>
+  </div>
+
+      {% if gposts.comments.all %}
+      {% for comment in gposts.comments.all %}
+      <div class="activity__list__footer">
+           {{ comment.timestamp }}
+          <br>
+           {{ comment.name | safe }} -
+           {{ comment.body }}
+      </div>
+        {% endfor %}
+        {% endif %}
+    </div>
+        {% endfor %}
+    </div>
+  </div>
+</section>
+      
+  <!-- End toppicks Section -->
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+
+
+    <div class="container footer-bottom clearfix">
+      <div class="copyright">
+        &copy; Copyright <strong><span>CCafe</span></strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+        Designed by CC-cupproduct</a>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top"><i class="ri-arrow-up-line"></i></a>
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+  <script src="{% static 'restauranthomeassets/vendor/jquery/jquery.min.js' %}"></script>
+  <script src="{% static 'restauranthomeassets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'restauranthomeassets/vendor/jquery.easing/jquery.easing.min.js' %}"></script>
+  <script src="{% static 'restauranthomeassets/vendor/php-email-form/validate.js' %}"></script>
+  <script src="{% static 'restauranthomeassets/vendor/waypoints/jquery.waypoints.min.js' %}"></script>
+  <script src="{% static 'restauranthomeassets/vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
+  <script src="{% static 'restauranthomeassets/vendor/venobox/venobox.min.js' %}"></script>
+  <script src="{% static 'restauranthomeassets/vendor/owl.carousel/owl.carousel.min.js' %}"></script>
+  <script src="{% static 'restauranthomeassets/vendor/swiper/swiper-bundle.min.js' %}"></script>
+  <script src="{% static 'restauranthomeassets/vendor/aos/aos.js' %}"></script>
+  <script src="{% static 'restauranthomeassets/vendor/purecounter/purecounter.js' %}"></script>
+  <script src="{% static 'restauranthomeassets/vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
+  <script src="{% static 'restauranthomeassets/vendor/glightbox/js/glightbox.min.js' %}"></script>
+  
+  
+
+
+  <!-- Template Main JS File -->
+  <script src="{% static 'restauranthomeassets/js/main.js' %}"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,463 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+	<title>Restaurant</title>
+	 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+	<style >
+		
+		button{
+			width: 200px;
+			height: 50px;
+			padding: 15px;	
+		}
+		button:hover{
+			background-color: white;
+			color: black;
+
+		}
+
+
+
+		body {
+  background-color: hsl(0, 0%, 98%);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: hsl(0, 0%, 30%);
+}
+
+.box-element {
+  box-shadow: hsl(0, 0%, 80%) 0 0 16px;
+  background-color: #fff;
+  border-radius: 4px;
+  padding: 10px;
+}
+
+.thumbnail {
+  width: 100%;
+  height: 200px;
+  -webkit-box-shadow: -1px -3px 5px -2px rgba(214, 214, 214, 1);
+  -moz-box-shadow: -1px -3px 5px -2px rgba(214, 214, 214, 1);
+  box-shadow: -1px -3px 5px -2px rgba(214, 214, 214, 1);
+}
+
+.product {
+  border-radius: 0 0 4px 4px;
+}
+
+.bg-dark {
+  background-color: #4f868c !important;
+}
+
+#cart-icon {
+  width: 25px;
+  display: inline-block;
+  margin-left: 15px;
+}
+
+#cart-total {
+  display: block;
+  text-align: center;
+  color: #fff;
+  background-color: red;
+  width: 20px;
+  height: 25px;
+  border-radius: 50%;
+  font-size: 14px;
+}
+
+.col-lg-4,
+.col-lg-6,
+.col-lg-8,
+.col-lg-12 {
+  margin-top: 10px;
+}
+
+.btn {
+  border-radius: 0;
+}
+
+.row-image {
+  width: 100px;
+}
+
+.form-field {
+  width: 250px;
+  display: inline-block;
+  padding: 5px;
+}
+
+.cart-row {
+  display: flex;
+  align-items: flex-stretch;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #ececec;
+}
+
+.quantity {
+  display: inline-block;
+  font-weight: 700;
+  padding-right: 10px;
+}
+
+.chg-quantity {
+  width: 12px;
+  cursor: pointer;
+  display: block;
+  margin-top: 5px;
+  transition: 0.1s;
+}
+
+.chg-quantity:hover {
+  opacity: 0.6;
+}
+
+.hidden {
+  display: none !important;
+}
+
+	</style>
+</head>
+<body>
+
+
+  <h1> {{detail_object.businessname}}</h1>
+
+<h4>Today's Special: HYD CHICKEN DUM BIRYANI  &nbsp;<a href="#">Order Now</a></h4>
+
+
+<hr>
+<h2>Today's Menu</h2>
+
+
+{% for item in items %}
+
+
+<br>
+<h2>{{item.item_name}}  &nbsp;<a href="{% url 'cc:foodde' id=item.id %}">Order Now</a></h2>
+<a href="{% url 'cc:addToCart' id=item.id %}">Add to Cart</a>
+{% endfor %}
+
+
+
+
+</body>
+</html> -->
+
+
+
+
+
+
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Community Cafe</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href='https://use.fontawesome.com/releases/v5.7.2/css/all.css'>
+  <link href="{% static 'restauranthomeassets/img/favicon.png' %}" rel="icon">
+  <link href="{% static 'restauranthomeassets/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
+  <link href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Advent+Pro:wght@700&display=swap" rel="stylesheet">
+  <link href='https://fonts.googleapis.com/css?family=Roboto Condensed' rel='stylesheet'>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Jost:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+  <!-- Vendor CSS Files -->
+  <link href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css'>
+  <link href="{% static 'restauranthomeassets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'restauranthomeassets/vendor/icofont/icofont.min.css' %}" rel="stylesheet">
+  <link href="{% static 'restauranthomeassets/vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
+  <link href="{% static 'restauranthomeassets/vendor/remixicon/remixicon.css' %}" rel="stylesheet">
+  <link href="{% static 'restauranthomeassets/vendor/venobox/venobox.css' %}" rel="stylesheet">
+  <link href="{% static 'restauranthomeassets/vendor/owl.carousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
+  <link href="{% static 'restauranthomeassets/vendor/aos/aos.css' %}" rel="stylesheet">
+  <link href='https://use.fontawesome.com/releases/v5.8.1/css/all.css' rel='stylesheet'>
+  <link href="{% static 'restauranthomeassets/vendor/animate.css/animate.min.css' %}" rel="stylesheet">
+  <link href="{% static 'restauranthomeassets/vendor/aos/aos.css' %}" rel="stylesheet">
+  <link href="{% static 'restauranthomeassets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'restauranthomeassets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+  <link href="{% static 'restauranthomeassets/vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
+  <link href="{% static 'restauranthomeassets/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+  <link href="{% static 'restauranthomeassets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+
+  <!-- Template Main CSS File -->
+  <link href="{% static 'restauranthomeassets/css/style.css' %}" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <!-- ======= Side Panel======= -->
+  <div id="mySidepanel" class="sidepanel">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+    <a href="{% url 'cc:homepage' %}">HOME</a>
+    <a href="{% url 'cc:members' %}">NEIGHBOURHOOD</a>
+    <a href="{% url 'cc:marketplacehome' %}">MARKETPLACE</a>
+    <a href="{% url 'cc:groups' %}">HOBBIES & SKILLS</a>
+    <a href="{% url 'cc:givebackhome' %}">GIVE BACK</a>
+    <a href="">EVENTS</a>
+ <a href="{% url 'cc:myorders' %}">MY ORDERS</a>
+  </div>
+
+    <!-- ======= Header ======= -->
+    <header id="header" class="fixed-top ">
+      <div class="container d-flex align-items-center">
+  
+        <!--<h1 class="logo mr-auto"><a href="index.html">CCafe</a></h1>-->
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <a href="index.html" class="logo mr-auto"><img src="{% static 'restauranthomeassets/img/cclogo.png' %}" alt="" class="img-fluid"></a>
+        <a href="#" class=" mr-auto burger " style="left:-36%;" onclick="openNav()">
+          <span></span></a>
+
+            <nav class="nav-menu d-none d-lg-block">
+              <ul>
+                <li>
+                  <input type="text" placeholder="Search Community Cafe Marketplace" class="searchbar"/ >
+                  <div class="search"></div>
+                </li>
+
+                <li style="margin-left: 50px;">
+                  
+
+                  <a href="{% url 'cc:CartView' %}">
+                    <i class="fa fa-shopping-cart circle-icon" style="color:white"></i>
+                  </a>
+                </li>    
+               
+                  
+
+
+  
+
+
+                </li>    </a>
+                <li><i class="fa fa-user circle-icon" style="color:white"></i></li>      
+              </ul>
+              <div class="dropdown-content">  
+                <div class="row">
+                  <div class="column" style="background-color: #1D3558;">
+                    <h3>Home Business</h3>
+                    <a href="#">Food</a>
+                    <a href="#">Fitness</a>
+                    <a href="#">Arts & Crafts</a>
+                  </div>
+                  <div class="column" style="background-color: #FF5757;">
+                    <h3>Domestic</h3>
+                    <a href="#">Cook</a>
+                    <a href="#">Driver</a>
+                    <a href="#">Gardener</a>
+                  </div>
+                </div>
+              </div>
+              
+            </nav><!-- .nav-menu -->          
+      </div>
+    </header><!-- End Header -->
+  
+<main id="main">
+
+  <section id="hero" class="d-flex align-items-center ">
+    <div class="container" data-aos="fade-up">
+
+ <img src="{{detail_object.business_logo.url}}" style="width: 300px; float: right;">
+      <div class="section-title">
+        <h2>Welcome to {{detail_object.businessname}}</h2>
+        <p>"{{detail_object.caption}}"</p>
+      </div>
+  
+         
+
+</section>
+
+  
+      
+  <!-- ======= cupcakes product Section ======= -->
+    <section id="cupproduct" class="cupproduct ">
+      <div class="container products" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Today's Menu</h2>
+        </div>
+
+      <div class="wrap">
+        <div class="menu">
+          <h2 style="text-align:center"> Menus</h2>
+            <div class="mini-menu">
+            <ul>
+            <li class="sub">
+                   <li><a href="#">Curry</a></li>
+                   <li><a href="#">Veg</a></li>
+                   <li><a href="#">Non-Veg</a></li> 
+                   <li><a href="#">Desserts</a></li>                
+            </li>
+            </ul>
+            </div>            
+        </div>
+    
+        <div class="items">            
+        <div class="items">
+          <select class="filter" value="Filter By" style="float:right;">
+            <option value="Home Chef" Selected>Top Rated</option>
+            <option value="Dishes">Offers</option>
+            <option value="Cuisine">Price by Highest</option>
+            <option value="Time of Day">Price by Lowest</option>
+          </select> 
+        <h2> Veg Menu </h2>
+        {% for item in items %}
+            <div data-price="290" class="item">
+                <img style="object-fit: contain; transform: scale(1.3);" src="{{item.imageURL}}" alt="Cupcake" class="img-item"></img>
+                    <div class="info">
+                        <h3>{{item.item_name}}</h3>
+                        <h5>Rs. {{item.price_per_unit}}/-</h5>                        
+                        <a href="{% url 'cc:addToCart' id=item.id %}" class="get-started-btn cart">ADD TO CART</a>
+                    </div>
+            </div>
+            {% endfor %}
+<!-- {% for item in items %}
+
+
+<br>
+<h2>{{item.item_name}}  &nbsp;<a href="{% url 'cc:foodde' id=item.id %}">Order Now</a></h2>
+<a href="{% url 'cc:addToCart' id=item.id %}">Add to Cart</a>
+{% endfor %} -->
+       
+        </div>
+        </div>
+    </div>
+
+      </div>
+    </section><!-- End toppicks Section -->
+
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="contact">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>FACING ANY ISSUES, OR HAVE ANY QUESTIONS?</h2>
+          <p>GET IN TOUCH WITH US THROUGH THIS FORMs</p>
+        </div>
+
+        <div class="row mt-5">
+
+          <div class="col-lg-4">
+            <div class="info">
+              <div class="signup">
+                <i class="bi bi-geo-alt"></i>
+                <h4>New Here:</h4>
+                <p>Signup Here</p>
+              </div>
+
+              <div class="email">
+                <i class="bi bi-envelope"></i>
+                <h4>Email:</h4>
+                <p>helpdesk@ccafe.com</p>
+              </div>
+
+              <div class="phone">
+                <i class="bi bi-phone"></i>
+                <h4>Call:</h4>
+                <p>+1 5589 55488 55s</p>
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="col-lg-8 mt-5 mt-lg-0">
+
+            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+              <div class="row">
+                <div class="col-md-6 form-group">
+                  <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+                </div>
+                <div class="col-md-6 form-group mt-3 mt-md-0">
+                  <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+                </div>
+              </div>
+              <div class="form-group mt-3">
+                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
+              </div>
+              <div class="form-group mt-3">
+                <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
+              </div>
+              <div class="my-3">
+                <div class="loading">Loading</div>
+                <div class="error-message"></div>
+                <div class="sent-message">Your message has been sent. Thank you!</div>
+              </div>
+              <div class="text-center"><button type="submit">Send Message</button></div>
+            </form>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Contact Section -->
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+
+
+    <div class="container footer-bottom clearfix">
+      <div class="copyright">
+        &copy; Copyright <strong><span>CCafe</span></strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+        Designed by CC-cupproduct</a>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top"><i class="ri-arrow-up-line"></i></a>
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+  <script src="{% static 'restauranthomeassets/vendor/jquery/jquery.min.js' %}"></script>
+  <script src="{% static 'restauranthomeassets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'restauranthomeassets/vendor/jquery.easing/jquery.easing.min.js' %}"></script>
+  <script src="{% static 'restauranthomeassets/vendor/php-email-form/validate.js' %}"></script>
+  <script src="{% static 'restauranthomeassets/vendor/waypoints/jquery.waypoints.min.js' %}"></script>
+  <script src="{% static 'restauranthomeassets/vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
+  <script src="{% static 'restauranthomeassets/vendor/venobox/venobox.min.js' %}"></script>
+  <script src="{% static 'restauranthomeassets/vendor/owl.carousel/owl.carousel.min.js' %}"></script>
+  <script src="{% static 'restauranthomeassets/vendor/swiper/swiper-bundle.min.js' %}"></script>
+  <script src="{% static 'restauranthomeassets/vendor/aos/aos.js' %}"></script>
+  <script src="{% static 'restauranthomeassets/vendor/purecounter/purecounter.js' %}"></script>
+  <script src="{% static 'restauranthomeassets/vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
+  <script src="{% static 'restauranthomeassets/vendor/glightbox/js/glightbox.min.js' %}"></script>
+  
+  
+
+
+  <!-- Template Main JS File -->
+  <script src="{% static 'restauranthomeassets/js/main.js' %}"></script>
+
+</body>
+
+</html>

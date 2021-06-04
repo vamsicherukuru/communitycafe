@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Billing and Delivery</title>
+</head>
+<body>
+
+{% if ordered %}
+
+
+	<h1>Order Successful</h1>
+
+{% else %}
+<form method="POST">
+{% csrf_token %}
+	<h1>Item Name: {{food_detail.item_name}}</h1>
+<h3>Quantity: 1</h3>
+
+
+
+<h3 name='price'>Price: {{food_detail.price_per_unit}}</h3>
+<h1>Deliver to {{user.username}}</h1>
+<h4>Full Address:</h4>
+<p>{{user.userprofile.houseNumber}}</p>
+<p>{{user.userprofile.Area_Name}}</p>
+<p>Mode Of Payment: <b>Cash on Delivery</b></p>
+<input type="submit" value="Place Order"  name="">
+</form>
+{% endif %}
+</body>
+</html>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+{% load static %}
+{% load humanize %}
+<html>
+<head>
+	<title>My Approvals</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+<style type="text/css">
+
+
+@import url('https://fonts.googleapis.com/css2?family=Advent+Pro&display=swap');
+	body{
+		background-color: #FFFCF9;
+		background: url('{% static '\assets\img\slide\5.jpg' %}');
+			background-size: cover;
+			background-repeat: no-repeat;
+			background-position: fixed;
+			background-size: 400px ;
+			font-family: 'Advent Pro';
+	}
+</style>
+</head>
+<body>
+
+<div style="padding: 15px; box-shadow: 2px 2px 2px silver; ">
+<center>	<h4 style="color:  #FF5757;">
+	<img src="/static/loggedinassets/assets/img/cclogo.png" alt="" style="width: 40px;"> 
+	<strong>Community Approvals</strong>
+
+</h4></center>
+</div>
+
+<div  class="container" style="box-shadow:0px 0px 3px grey; margin-top: 30px; padding: 15px; background-color: white"> 
+
+
+
+
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Request Number</th>
+      <th scope="col">Name of Applicant</th>
+      <th scope="col">Status</th>
+      <th scope="col">Community Name</th>
+      <th scope="col">Refered By</th>
+            <th scope="col">Photo</th>
+
+
+    </tr>
+  </thead>
+  <tbody>
+  	{% for request in my_requests %}
+    <tr>
+      <th scope="row">{{request.id}}</th>
+      <td>{{request.user.first_name | upper}}
+
+      	{{request.user.last_name | upper}}
+      </td>
+      <td>
+      	
+      	{% if request.accepted %}
+
+ &#9989; Accepted 
+
+{% else %}
+
+ &#10067; Pending
+
+
+{% endif %}	
+      </td>
+      <td style="color:  #FF5757; font-weight: bolder;">{{request.Community_Name.Community_Name}}</td>
+      <td></td>
+<td>
+	
+
+<img src="{{request.user.userprofile.profile_pic.url}}" width="100px;">
+
+
+</td>
+
+<td>
+	
+
+{% if request.accepted %}
+
+
+
+{% else %}
+
+<a class="btn btn-outline-success" href="{% url 'cc:acceptjoin' id=request.id community_id=request.Community_Name.id member=request.user.id %}">Accept</a>
+<!-- <a href="#">Reject</a> -->
+
+
+{% endif %}
+
+</td>
+
+
+    </tr>
+    <tr>
+    	<td>
+    		<h6>Details</h6>
+
+    	 {{request.user.userprofile.Area_Name}}
+<br> {{request.user.userprofile.mobileNumber}}
+
+<br>
+<strong style="color:  #FF5757;">{{request.timestamp | naturaltime }}..</strong>
+    	</td>
+    </tr>
+   {% endfor %}
+  </tbody>
+</table>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

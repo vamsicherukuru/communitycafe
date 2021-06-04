@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Manage</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+
+
+
+{% for item in all_items %}
+
+<h1>{{item.item_name}}</h1>
+<h4>
+	{% if item.available_today %}
+
+
+
+	Available
+
+	{% else %}
+
+
+	Not available
+
+	{% endif %}
+
+
+</h4>
+
+<a href="{% url 'cc:makeavailable' id=item.id %}" class="btn btn-success">Available</a>
+<a href="{% url 'cc:makeunavailable' id=item.id %}" class="btn btn-success">Unavailable</a>
+
+
+{% endfor %}
+
+</body><!-- 
+<script type="text/javascript">
+  
+
+  $(document).on('click','#bus_reg_form', function(e){
+
+      e.preventDefault()
+
+
+      $.ajax({
+        type:'POST'.
+        url:"{% url 'cc:busReg' %}"
+        data:{
+          category:$('#category').val(),
+          businessname:$('#businessname').val(),
+          address:$('#address').val(),
+          caption:$('#caption').val(),
+          business_logo:$('#business_logo').val(),
+          csrfmiddlewaretoken:$('input[name=csrfmiddlewaretoken]').val()
+        },
+        success:function(){
+
+          alert('Created New Business');
+
+        }
+      })
+
+  });
+</script> -->
+
+</html>
